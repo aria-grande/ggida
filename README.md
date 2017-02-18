@@ -13,18 +13,24 @@ Things you may want to cover:
     - 5.7.17
     
 ## Let's start building
+
+#### Install dependencies
   1. Install Ruby on Rails
     - https://github.com/aria-grande/ggida/wiki/About-Ruby-on-Rails
   2. Install mysql and set up the database
     - https://www.mysql.com/downloads/
-  3. Clone the project
+    
+#### Set up the project
+  3. Clone the source
   4. Set up database information in config/database.yml
   5. Go to home directory
   6. Install gems by running `bundle install`
   7. Create database by running `rails db:create`
   8. Migrate database schema by running `rails db:migrate`
   9. Set initial data by running `rails db:seed`
-  10. Launch a web server by running `rails server`
+  
+#### Launch a server
+  10. `rails server`
     - reference [Rails CLI](http://guides.rubyonrails.org/command_line.html)
   11. Get a greeting from [http://localhost:3000](http://localhost:3000)
   
