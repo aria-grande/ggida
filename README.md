@@ -18,23 +18,27 @@ Things you may want to cover:
   2. Install mysql and set up the database
     - https://www.mysql.com/downloads/
   3. Clone the project
-  4. Go to home directory
-  5. Install gems by running command `bundle install`
-  6. Launch a web server by running command `rails server`
+  4. Set up database information in config/database.yml
+  5. Go to home directory
+  6. Install gems by running `bundle install`
+  7. Create database by running `rails db:create`
+  8. Migrate database schema by running `rails db:migrate`
+  9. Set initial data by running `rails db:seed`
+  10. Launch a web server by running `rails server`
     - reference [Rails CLI](http://guides.rubyonrails.org/command_line.html)
-  7. Get a greeting from [http://localhost:3000](http://localhost:3000)
+  11. Get a greeting from [http://localhost:3000](http://localhost:3000)
   
   
 ## Database
 ### creation
-  - `rake db:create`
+  - `rails db:create`
 
 ### initialization
-  - `rake db:seed`
+  - `rails db:seed`
   - (or created alongside the database with `rake db:setup`)
   
 ### migration
-  - `rake db:migrate`
+  - `rails db:migrate`
 
 ### schema
   - `annotate -m`
