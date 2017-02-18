@@ -14,7 +14,7 @@ Things you may want to cover:
     
 ## Let's start building
   1. Install Ruby on Rails
-    - https://gorails.com/setup/osx/10.12-sierra
+    - https://github.com/aria-grande/ggida/wiki/About-Ruby-on-Rails
   2. Install mysql and set up the database
     - https://www.mysql.com/downloads/
   3. Clone the project
