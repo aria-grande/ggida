@@ -16,11 +16,24 @@ Things you may want to cover:
 ### creation
   - `rake db:create`
 
-### initialization/migration
+### initialization
+  - `rake db:seed`
+  - (or created alongside the database with `rake db:setup`)
+  
+### migration
   - `rake db:migrate`
 
+### schema
+  - `annotate -m`
+    - writes schema into {model}.rb using [annotate_models](https://github.com/ctran/annotate_models)
+
+## Routes
+  - `rake routes`
+  - `annotate -r`
+    - writes route infos into routes.rb using [annotate_models](https://github.com/ctran/annotate_models)
+
 ## Test 
-  - `rails test`
+  - `rake test`
   - Reference http://guides.rubyonrails.org/testing.html
 
 ## Let's start building
@@ -34,3 +47,7 @@ Things you may want to cover:
   6. Launch a web server by running command `rails server`
     - reference [Rails CLI](http://guides.rubyonrails.org/command_line.html)
   7. Get a greeting from [http://localhost:3000](http://localhost:3000)
+
+## Reference
+  - use different version of ruby per project
+    - https://makandracards.com/makandra/21545-rbenv-how-to-switch-to-another-ruby-version-temporarily-per-project-or-globally
