@@ -23,6 +23,9 @@ Things you may want to cover:
 ### migration
   - `rake db:migrate`
 
+## Routes
+  - `rake routes`
+  
 ## Test 
   - `rake test`
   - Reference http://guides.rubyonrails.org/testing.html
@@ -38,3 +41,7 @@ Things you may want to cover:
   6. Launch a web server by running command `rails server`
     - reference [Rails CLI](http://guides.rubyonrails.org/command_line.html)
   7. Get a greeting from [http://localhost:3000](http://localhost:3000)
+
+## Reference
+  - use different version of ruby per project
+    - https://makandracards.com/makandra/21545-rbenv-how-to-switch-to-another-ruby-version-temporarily-per-project-or-globally
