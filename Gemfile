@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Specified ruby version
+ruby "~> 2.4.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'rails-i18n', '~> 5.0.0'
