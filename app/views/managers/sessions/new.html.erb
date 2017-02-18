@@ -1,7 +1,22 @@
-<h1>Login form</h1>
-<form action="/managers/sign_in" method="post">
+<h1>Manager Login</h1>
+<br/>
+<form action="/managers/sign_in" method="post" class="form-horizontal">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-  <input type="email" name="manager[email]" placeholder="이메일 입력" />
-  <input type="password" name="manager[password]" placeholder="비밀번호 입력" />
-  <input type="submit" value="로그인" />
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" name="manager[email]" placeholder="이메일 입력" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" name="manager[password]" placeholder="비밀번호 입력" />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-default">로그인</button>
 </form>
+
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
