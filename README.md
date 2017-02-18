@@ -23,9 +23,15 @@ Things you may want to cover:
 ### migration
   - `rake db:migrate`
 
+### schema
+  - `annotate -m`
+    - writes schema into {model}.rb using [annotate_models](https://github.com/ctran/annotate_models)
+
 ## Routes
   - `rake routes`
-  
+  - `annotate -r`
+    - writes route infos into routes.rb using [annotate_models](https://github.com/ctran/annotate_models)
+
 ## Test 
   - `rake test`
   - Reference http://guides.rubyonrails.org/testing.html
