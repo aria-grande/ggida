@@ -1,3 +1,17 @@
-<h2>Hello, <%= @manager.username %></h2>
+<!-- Navigation -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">끼니를 다함께</a>
+    </div>
 
-<a data-method="delete" href="/managers/sign_out">로그아웃</a>
+    <% if @manager.is_a?(Manager) %>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-method="delete" href="/managers/sign_out">로그아웃</a></li>
+        </ul>
+        <p class="navbar-text navbar-right">안녕하세요, <%= @manager&.username %>관리자님</p>
+    <% end %>
+  </div>
+</nav>
+<iframe title='굿바이 먹자먹! 행복했어♥ [먹고 자고 먹고_센토사편] 2회 20161227' width='640px' height='360px' src='http://videofarm.daum.net/controller/video/viewer/Video.html?vid=s90baAl8b8qXqqIm8mOOPnP&play_loc=undefined&startDuration=95&alert=true' frameborder='0' scrolling='no' ></iframe>
