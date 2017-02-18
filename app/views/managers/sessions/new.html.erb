@@ -1,0 +1,7 @@
+<h1>Login form</h1>
+<form action="/managers/sign_in" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+  <input type="email" name="manager[email]" placeholder="이메일 입력" />
+  <input type="password" name="manager[password]" placeholder="비밀번호 입력" />
+  <input type="submit" value="로그인" />
+</form>
