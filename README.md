@@ -16,11 +16,15 @@ Things you may want to cover:
 ### creation
   - `rake db:create`
 
-### initialization/migration
+### initialization
+  - `rake db:seed`
+  - (or created alongside the database with `rake db:setup`)
+  
+### migration
   - `rake db:migrate`
 
 ## Test 
-  - `rails test`
+  - `rake test`
   - Reference http://guides.rubyonrails.org/testing.html
 
 ## Let's start building
