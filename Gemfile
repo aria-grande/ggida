@@ -10,6 +10,9 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'devise', '~> 4.2.0'
 gem 'devise-i18n'
 
+# Simple, efficient background processing for Ruby.
+gem 'sidekiq'
+
 # Provides a simple and extremely flexible way to upload files from Ruby applications.
 gem 'carrierwave', '~> 0.11.0'
 
