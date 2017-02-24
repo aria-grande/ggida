@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Manager.create!(username: 'manager1', email: 'test@ggida.org', password: '123456')
-Party.create!(title: 'party tonight', contents: 'conetents of the party', place:'startup campus', contact_number:'01011111111', contact_email:'test@ggida.org', address:'South Korea', min_participants: 3, max_participants: 5, start_date: Time.zone.now, end_date: Time.zone.now+2.days)
+Party.create!(id: 1, state: 1, title: 'party tonight', contents: 'conetents of the party', place:'startup campus', contact_number:'01011111111', contact_email:'test@ggida.org', address:'South Korea', min_participants: 3, max_participants: 5, start_date: Time.zone.now, end_date: Time.zone.now+2.days)
+Participant.create!(name: 'hong gildong', email: 'gildong@test.com', phone:'01012311231', party_id: 1)

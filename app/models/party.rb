@@ -19,6 +19,7 @@
 #
 
 class Party < ApplicationRecord
+  has_many :participants
 
   enum state: {
       pending_approval: 0, # 승인 대기 중
