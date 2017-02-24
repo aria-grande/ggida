@@ -17,7 +17,7 @@ class ParticipantsController < ApplicationController
   end
 
   def create
-    Participant.create!(params.require(:participant))
+    Participant.create!(participant_params)
   end
 
   private
