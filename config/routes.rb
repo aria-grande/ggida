@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :managers, controllers: { sessions: 'managers/sessions' }
 
-  resources :parties, only: %i(index) do
+  resources :parties, only: %i(index show) do
   end
 
   root to: 'home#index', as: :root

@@ -1,6 +1,10 @@
 class PartiesController < ApplicationController
   def index
     @parties = Party.all
-    render 'parties/index'
   end
+
+  def show
+    @party = Party.find_by_id(params[:id])
+  end
+
 end
