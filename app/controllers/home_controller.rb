@@ -4,6 +4,8 @@ class HomeController < ApplicationController
   end
 
   def introduce
-    
+  end
+
+  def guide
   end
 end

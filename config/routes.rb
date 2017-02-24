@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   end
 
   get 'introduce', to: 'home#introduce'
-
+  get 'guide', to: 'home#guide'
   root to: 'home#index', as: :root
 end
