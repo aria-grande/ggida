@@ -1,0 +1,6 @@
+<h1> 모임 목록</h1>
+<% @parties.each_with_index do |party, idx| %>
+  <div>
+    <p><%= idx %>번째 모임 : <%= party.inspect %>
+  </div>
+<% end %>
