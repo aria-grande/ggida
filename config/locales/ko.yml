@@ -1,0 +1,48 @@
+ko:
+  activerecord:
+    models:
+      party:
+        one: '모임'
+        other: '모임'
+      manager:
+        one: '중간관리자'
+        other: '중간관리자'
+      participant:
+        one: '참여자'
+        other: '참여자'
+    attributes:
+      attribute_commons: &commons
+        id: 'id'
+        created_at: '생성일'
+        updated_at: '수정일'
+      devise: &devise
+        <<: *commons
+        password: '비밀번호'
+        username: '이름'
+        sign_in_count: '로그인 횟수'
+        current_sign_in_at: '현재 로그인 시간'
+        current_sign_in_ip: '현재 로그인 IP'
+        last_sign_in_at: '마지막 로그인 시간'
+        last_sign_in_ip: '마지막 로그인 IP'
+      party: &party
+        <<: *commons
+        title: '모임 제목'
+        contents: '모임 설명'
+        place: '모임 장소'
+        contact_number: '담당자 연락처'
+        contact_email: '담당자 이메일'
+        address: '모임 장소의 주소'
+        state: '상태'
+        start_date: '모임 일시'
+        min_participant: '최소 인원'
+        max_participant: '최대 인원'
+        price: '참가비'
+      participant: &participant
+        <<: *commons
+        name: '이름'
+        email: '이메일'
+        phone: '휴대폰 번호'
+      manager: &manager
+        <<: *devise
+        username: '이름'
+        email: '이메일'
