@@ -8,6 +8,8 @@
 #                         POST   /parties/:party_id/participants(.:format)     participants#create
 #   new_party_participant GET    /parties/:party_id/participants/new(.:format) participants#new
 #       party_participant GET    /parties/:party_id/participants/:id(.:format) participants#show
+#                         PATCH  /parties/:party_id/participants/:id(.:format) participants#update
+#                         PUT    /parties/:party_id/participants/:id(.:format) participants#update
 #                 parties GET    /parties(.:format)                            parties#index
 #                         POST   /parties(.:format)                            parties#create
 #               new_party GET    /parties/new(.:format)                        parties#new
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
   devise_for :managers, controllers: { sessions: 'managers/sessions' }
 
   resources :parties do
-    resources :participants, only: %i(index new create show) do
+    resources :participants, only: %i(index new create show update) do
     end
   end
 

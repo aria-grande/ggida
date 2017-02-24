@@ -11,11 +11,11 @@
 #  address          :string(255)      not null
 #  state            :integer          default("pending_approval"), not null
 #  start_date       :datetime         not null
-#  end_date         :datetime         not null
 #  min_participants :integer
 #  max_participants :integer
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  price            :integer          default(0)
 #
 
 class Party < ApplicationRecord
