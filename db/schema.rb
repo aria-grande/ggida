@@ -38,19 +38,23 @@ ActiveRecord::Schema.define(version: 20170224200316) do
   end
 
   create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string   "title",                        null: false
-    t.string   "contents",                     null: false
-    t.string   "place",                        null: false
-    t.string   "contact_number",               null: false
+    t.string   "title",                           null: false
+    t.string   "contents",                        null: false
+    t.string   "place",                           null: false
+    t.string   "contact_number",                  null: false
     t.string   "contact_email"
-    t.string   "address",                      null: false
-    t.integer  "state",            default: 0, null: false
-    t.datetime "start_date",                   null: false
+    t.string   "address",                         null: false
+    t.integer  "state",               default: 0, null: false
+    t.datetime "start_date",                      null: false
     t.integer  "min_participants"
     t.integer  "max_participants"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "price",            default: 0
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "price",               default: 0
+    t.string   "images_file_name"
+    t.string   "images_content_type"
+    t.integer  "images_file_size"
+    t.datetime "images_updated_at"
   end
 
 end
