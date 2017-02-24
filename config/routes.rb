@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   resources :parties do
   end
 
+  get 'introduce', to: 'home#introduce'
+
   root to: 'home#index', as: :root
 end
