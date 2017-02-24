@@ -5,7 +5,18 @@ class PartiesController < ApplicationController
   end
 
   def create
-    Party.create!(params.require(:party))
+  	party = params.require(:party).permit!
+  	party["state"] = 1
+	party["contents"] = 'conetents of the party'
+	party["place"] = 'startup campus'
+	party["contact_number"] = '01011111111'
+	party["contact_email"] = 'test@ggida.org'
+	party["address"] = 'South Korea'
+	party["min_participants"] =  3
+	party["max_participants"] =  5
+	party["start_date"] =  Time.zone.now
+	
+    Party.create!(party)
   end
 
   def update
