@@ -21,7 +21,7 @@
 class Party < ApplicationRecord
   has_many :participants
   
-  has_attached_file :images, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", :path => "public/upload/images/:id/:style_:filename"
+  has_attached_file :images, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", :path => "public/upload/images/:id_:style_:filename"
   validates_attachment_content_type :images, :content_type => /^image\/(jpeg|png|gif|tiff)$/
   validates_attachment_size :images, :in => 0..10.megabytes
 
