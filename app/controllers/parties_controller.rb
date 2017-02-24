@@ -1,5 +1,15 @@
 class PartiesController < ApplicationController
+  before_action :authenticate_user!, only: %i(new create update)
+
   def new
+  end
+
+  def create
+    Party.create!(params.require(:party))
+  end
+
+  def update
+    super
   end
 
   def index

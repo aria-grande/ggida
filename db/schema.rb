@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224142042) do
+ActiveRecord::Schema.define(version: 20170224182108) do
 
   create_table "managers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "username",           default: "", null: false
@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 20170224142042) do
     t.string   "address",                      null: false
     t.integer  "state",            default: 0, null: false
     t.datetime "start_date",                   null: false
-    t.datetime "end_date",                     null: false
     t.integer  "min_participants"
     t.integer  "max_participants"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.integer  "price",            default: 0
   end
 
 end
