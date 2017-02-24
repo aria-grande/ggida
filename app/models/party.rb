@@ -9,7 +9,7 @@
 #  contact_number   :string(255)      not null
 #  contact_email    :string(255)
 #  address          :string(255)      not null
-#  state            :integer          default("accepting"), not null
+#  state            :integer          default("pending_approval"), not null
 #  start_date       :datetime         not null
 #  end_date         :datetime         not null
 #  min_participants :integer
@@ -21,7 +21,8 @@
 class Party < ApplicationRecord
 
   enum state: {
-      accepting: 0, # 모집중
-      done: 1 # 모집 완료
+      pending_approval: 0, # 승인 대기 중
+      accepting: 1, # 모집중
+      done: 2 # 모집 완료
   }
 end

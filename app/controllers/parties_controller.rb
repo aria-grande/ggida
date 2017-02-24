@@ -1,6 +1,9 @@
 class PartiesController < ApplicationController
+  def new
+  end
+
   def index
-    @parties = Party.all
+    @parties = Party.where.not(state: :pending_approval)
   end
 
   def show
