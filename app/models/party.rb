@@ -20,6 +20,10 @@
 
 class Party < ApplicationRecord
   has_many :participants
+  
+  has_attached_file :images, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", :path => "public/upload/images/:id/:style_:filename"
+  validates_attachment_content_type :images, :content_type => /^image\/(jpeg|png|gif|tiff)$/
+  validates_attachment_size :images, :in => 0..10.megabytes
 
   enum state: {
       pending_approval: 0, # 승인 대기 중
