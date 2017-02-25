@@ -16,7 +16,7 @@ class PartiesController < ApplicationController
 
     party.save
     PartyMailer.request_party(party).deliver_now
-    head :ok
+    redirect_to :root
   end
 
   def update
