@@ -34,14 +34,16 @@ ko:
         address: '모임 장소의 주소'
         state: '상태'
         start_date: '모임 일시'
-        min_participant: '최소 인원'
-        max_participant: '최대 인원'
+        min_participants: '최소 인원'
+        max_participants: '최대 인원'
         price: '참가비'
+        applier_name: '신청자 이름'
       participant: &participant
         <<: *commons
         name: '이름'
         email: '이메일'
         phone: '휴대폰 번호'
+        party_id: '모임 id'
       manager: &manager
         <<: *devise
         username: '이름'

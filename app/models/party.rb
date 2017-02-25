@@ -38,6 +38,10 @@ class Party < ApplicationRecord
 
   validate :check_done_condition
 
+  validates :title, :contents, :place, :contact_number, :contact_email, :address, :state, :start_date, :min_participants, :max_participants, :price, presence: true
+
+  validates :contact_email, email: true
+
   attr_reader :left_seats
 
   scope :will_done, -> (expire_date) { where('state = 1 and start_date <= ?', expire_date)}
