@@ -1,5 +1,5 @@
 class PartiesController < ApplicationController
-  before_action :authenticate_user!, only: %i(create update)
+  before_action :authenticate_user!, only: %i(edit update show)
 
   def new
   end
