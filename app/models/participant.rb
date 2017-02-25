@@ -9,8 +9,25 @@
 #  party_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  state      :integer          default("init")
 #
 
 class Participant < ApplicationRecord
   belongs_to :party
+
+  enum state: {
+      init: 0, # 초기 상태(승인 대기 중)
+      accepted: 1, # 모집중
+      rejected: 2 # 모집 완료
+  }
+
+  before_save :send_email_when_approved
+
+  protected
+
+  def send_email_when_approved
+    if state_changed? && accepted?
+      ParticipantMailer.approved_email(self).deliver_now
+    end
+  end
 end

@@ -1,6 +1,9 @@
 <h1>모임 신청 안내</h1>
-<form method="POST" action="/parties">
+<form method="POST" action="/parties" enctype="multipart/form-data">
   <!-- 필수 필드 party.rb의 스키마 참고 -->
   <input type="text" name="party[title]" placeholder="모임 제목"/>
+  <input type="file" name="party[images]" />
+  <input type="submit" />
   <!-- ... -->
 </form>
+

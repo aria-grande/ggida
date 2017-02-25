@@ -1,7 +1,13 @@
 <h1> 모임 목록</h1>
+
+<ul>
 <% @parties.each_with_index do |party, idx| %>
-  <div>
-    <p><%= idx %>번째 모임 : <%= party.inspect %></p>
-    <p><%= party.participants.count %>명이 참가를 원합니다.</p>
-  </div>
+	<li data-idx="<%=idx%>">
+		<img src="http://file.ggida.org/img/<%=party.id%>_thumb_<%=party.images_file_name%>" />
+		<a href="/parties/<%=party.id%>">
+			<span class="cont_tit"><%=party.title%></span>
+			<span class="cont_place"><%=party.place%></span>
+		</a>
+	</li>
 <% end %>
+</ul>
