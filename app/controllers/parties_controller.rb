@@ -1,22 +1,18 @@
 class PartiesController < ApplicationController
-  before_action :authenticate_user!, only: %i(edit update show)
+  before_action :authenticate_user!, only: %i(edit update)
 
   def new
   end
 
   def create
-  	party = params.require(:party).permit!
-  	party["state"] = 1
-    party["contents"] = 'conetents of the party'
-    party["place"] = 'startup campus'
-    party["contact_number"] = '01011111111'
-    party["contact_email"] = 'test@ggida.org'
-    party["address"] = 'South Korea'
-    party["min_participants"] =  3
-    party["max_participants"] =  5
-    party["start_date"] =  Time.zone.now
-	
-    Party.create!(party)
+    party = Party.create(party_params)
+    unless party.valid?
+      respond_to do |f|
+        f.html render :new
+        f.json render json: {error: party.errors.full_messages}, status: :bad_request
+      end
+    end
+    head :ok
   end
 
   def update
@@ -33,5 +29,13 @@ class PartiesController < ApplicationController
   
   def edit
     @party = Party.find_by_id(params[:id])
+  end
+
+  protected
+
+  def party_params
+    params.require(:party).permit(:title, :contents, :place, :contact_number, :contact_email, :address, :state,
+                                  :start_date, :min_participants, :max_participants, :price, :images_file_name,
+                                  :images_content_type, :images_file_size, :applier_name)
   end
 end

@@ -21,6 +21,10 @@ class Participant < ApplicationRecord
       rejected: 2 # 거절
   }
 
+  validates :name, :email, :phone, presence: true
+
+  validates :email, email: true
+
   before_save :send_email_when_approved
 
   before_save :check_seat_availability_in_the_party
