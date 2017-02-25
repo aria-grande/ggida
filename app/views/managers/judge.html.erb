@@ -71,8 +71,12 @@
                     </li>
                 </ul>
                 <ul class="wrap_button"> 
-                    <li><a class="btn_round btn_submit">등록</a></li>
-                    <li><a class="btn_round btn_cancle">거절</a></li>
+                	<form name="form_admit" action="/managers/parties/<%=@party.id%>/1" method="post">
+	                    <li><a class="btn_round btn_submit" href="#" onclick="document.form_admit.submit()">등록</a></li>
+                	</form>
+                	<form name="form_deny" action="/managers/parties/<%=@party.id%>/-1" method="post">
+	                    <li><a class="btn_round btn_cancle" href="#" onclick="document.form_deny.submit()">거절</a></li>
+                	</form>
                 </ul>
         </div>
     </div>
