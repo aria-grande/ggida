@@ -119,13 +119,11 @@ function request_submit() {
                 <label for="" class="lab_weite" >모임장소</label>
                 <div class="cell_inp">
                   <span id="place_temp" class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
-                  <select id="place" name="party[place]" class="inp_weite">
+                  <select id="place" name="party[kitchenId]" class="inp_weite">
                     <option value=""></option>
-                    <option value="청춘플랫폼">청춘플랫폼</option>
-                    <option value="무중력지대 대방동 나눔부엌">무중력지대 대방동 나눔부엌</option>
-                    <option value="춘삘딩 공유주방">청춘삘딩 공유주방</option>
-                    <option value="청년허브 창문카페">청년허브 창문카페</option>
-                    <option value="동팟 Sunday Kitchen">강동팟 Sunday Kitchen</option>
+				  <% @kitchens.each_with_index do |kitchen, idx| %>
+                    <option value="<%=kitchen.id%>"><%=kitchen.name%></option>
+				  <% end %>
                   </select>
                 </div>
             </div>
@@ -145,10 +143,10 @@ function request_submit() {
                 <span id="type_temp" class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
                 <select id="party_type" name="party[type]" class="inp_weite">
                   <option value=""></option>
-                  <option value="함께 장보고 요리하기">함께 장보고 요리하기</option>
-                  <option value="참여자가 각자 식재료 구매하고 함께 요리하기">참여자가 각자 식재료 구매하고 함께 요리하기</option>
-                  <option value="모임개설자가 식재료 구매하고 함께 요리하기">모임개설자가 식재료 구매하고 함께 요리하기</option>
-                  <option value="기타유형">기타유형</option>
+                  <option value="1">함께 장보고 요리하기</option>
+                  <option value="2">참여자가 각자 식재료 구매하고 함께 요리하기</option>
+                  <option value="3">모임개설자가 식재료 구매하고 함께 요리하기</option>
+                  <option value="4">기타유형</option>
                 </select>
               </div>
             </div>
