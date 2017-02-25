@@ -1,40 +1,28 @@
-<div id="kakaoIndex">
-  <a href="#kakaoBody">본문 바로가기</a>
-  <a href="#kakaoGnb">메뉴 바로가기</a>
-</div>
 <% flash.each do |key, value| %>
     <div class="alert alert-<%= key.eql?('notice') ? 'info' : 'danger'%>"><%= value %></div>
 <% end %>
-<div id="ggidaWrap">
-  <div id="ggidaHead" class="ggida_head " role="banner"> <!-- fixed_head -->
-    <div class="inner_head">
-      <h1 class="tit_head"><a href="#none" class="link_logo"><span class="ico_ggida tit_logo">ggida</span></a></h1>
-      <h2 class="screen_out">Manager Login</h2>
-    </div>
-  </div>
-  <div id="ggidaContent" class="cont_main" role="main">
-    <div id="cMain">
-          <div id="mArticle">
-          <div class="box_g box_sign">
-            <img src="/images/m640/img_logo.png" class="logo_img" alt="끼다 로고">
-            <form action="/managers/sign_in" method="post" class="form-horizontal">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-              <div class="form-group">
-                <label class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" name="manager[email]" placeholder="이메일 입력" />
-                </div>
+<div id="ggidaContent" class="cont_main" role="main">
+  <div id="cMain">
+      <div id="mArticle">
+        <div class="box_g box_sign">
+          <img src="/images/m640/img_logo.png" class="logo_img" alt="끼다 로고">
+          <form action="/managers/sign_in" method="post" class="form-horizontal">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" name="manager[email]" placeholder="이메일 입력" />
               </div>
-              <div class="form-group">
-                <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-10">
-                  <input type="password" class="form-control" name="manager[password]" placeholder="비밀번호 입력" />
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" name="manager[password]" placeholder="비밀번호 입력" />
               </div>
-              <button type="submit" class="btn btn-default">로그인</button>
-            </form>
-          </div>
+            </div>
+            <button type="submit" class="btn btn-default">로그인</button>
+          </form>
         </div>
-    </div>
+      </div>
   </div>
 </div>
