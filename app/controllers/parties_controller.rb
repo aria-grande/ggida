@@ -24,7 +24,7 @@ class PartiesController < ApplicationController
   end
 
   def index
-    @parties = Party.where.not(state: :pending_approval)
+    @parties = Party.where.not(state: :pending_approval).order(id: :desc)
   end
 
   def show
