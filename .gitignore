@@ -13,7 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 
-/.idea/*
+.idea/
 
 /db/schema.rb
 
