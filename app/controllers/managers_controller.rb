@@ -1,5 +1,8 @@
 class ManagersController < ApplicationController
+
+  before_action :authenticate_user!
+
   def parties
-    # TODO: 승인 대기 중인 모임들
+    @parties = Party.pending_approval
   end
 end

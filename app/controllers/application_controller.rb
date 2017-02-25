@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   rescue_from Exception, with: :render_default_error
 
   def authenticate_user!
-    redirect_to :root unless manager_signed_in?
+    redirect_to :new_manager_session unless manager_signed_in?
   end
 
   protected
