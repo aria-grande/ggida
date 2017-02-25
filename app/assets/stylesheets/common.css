@@ -180,6 +180,15 @@ button.btn_round{height:50px;padding-top:4px}
 .wrap_check .ico_check {width:30px;height:30px;margin-left:16px;background-position:-30px -48px}
 .wrap_check.check .ico_check{background-position:-64px -48px}
 
+/* 푸터 */
+.ggida_foot{padding:10px 0 25px;font-weight:200;font-size:0;text-align:center}
+.ggida_foot .txt_copyright{display:block;margin-bottom:12px;font-weight:200;font-size:16px;line-height:19px;color:#c3c2c2}
+.ggida_foot .link_foot{display:inline-block;width:30px;height:30px}
+.ggida_foot .link_foot:first-of-type{margin-right:16px}
+.ggida_foot .link_foot .ico_ggida{width:30px;height:30px}
+.ggida_foot .link_foot .ico_facebook{background-position:-30px -82px}
+.ggida_foot .link_foot .ico_email{background-position:-64px -82px}
+
 @media
 only screen and (max-width: 768px) {
     #kakaoGnb{display:none}
