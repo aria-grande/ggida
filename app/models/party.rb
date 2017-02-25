@@ -33,7 +33,12 @@ class Party < ApplicationRecord
                     :path => ":rails_root/public/upload/images/:id_:style_:filename",
                     :url => "/upload/images/:id_:style_:filename"
   validates_attachment_content_type :images, :content_type => /^image\/(jpeg|png|gif|tiff)$/
+
   validates_attachment_size :images, :in => 0..10.megabytes
+
+  validate :check_done_condition
+
+  attr_reader :left_seats
 
   scope :will_done, -> (expire_date) { where('state = 1 and start_date <= ?', expire_date)}
 
@@ -43,9 +48,24 @@ class Party < ApplicationRecord
       done: 2 # 모집 완료
   }
 
+  def left_seats
+    max_participants - participants.accepted.count
+  end
+
   class << self
     def make_done_after_start_date
       Party.will_done(Time.zone.now.end_of_day).map(&:done!)
+    end
+  end
+
+
+  protected
+
+  def check_done_condition
+    if state_changed? && state_was.eql?('accepting') && done? && start_date <= Time.zone.now
+      false
+    else
+      true
     end
   end
 end
