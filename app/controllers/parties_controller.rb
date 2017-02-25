@@ -38,8 +38,7 @@ class PartiesController < ApplicationController
   protected
 
   def party_params
-    params.require(:party).permit(:title, :contents, :place, :contact_number, :contact_email, :address, :state,
-                                  :start_date, :min_participants, :max_participants, :price, :images_file_name,
-                                  :images_content_type, :images_file_size, :applier_name)
+    params.require(:party).permit(:title, :contents, :kitchenId, :contact_number, :contact_email, :state,
+                                  :start_date, :min_participants, :max_participants, :price, :images, :applier_name, :category)
   end
 end
