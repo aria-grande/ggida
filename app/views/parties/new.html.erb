@@ -1,9 +1,138 @@
-<h1>모임 신청 안내</h1>
-<form method="POST" action="/parties" enctype="multipart/form-data">
-  <!-- 필수 필드 party.rb의 스키마 참고 -->
-  <input type="text" name="party[title]" placeholder="모임 제목"/>
-  <input type="file" name="party[images]" />
-  <input type="submit" />
-  <!-- ... -->
-</form>
-
+<div id="kakaoIndex">
+  <a href="#kakaoBody">본문 바로가기</a>
+  <a href="#kakaoGnb">메뉴 바로가기</a>
+</div>
+<div id="ggidaWrap" class="cont_sub">
+  <div id="ggidaHead" class="ggida_head " role="banner"> <!-- box_visual 영역 사라지면 fixed_head 클래스 추가-->
+    <div class="inner_head">
+      <h1 class="screen_out">끼니를 다함께</h1>
+      <a href="#none" class="btn_ggida btn_navi"><span class="ico_ggida ico_navi">메뉴열기</span></a>
+      <div id="ggidaGnb" role="navigation">
+        <h2 class="screen_out">끼다 메인메뉴</h2>
+        <ul class="gnb_ggida">
+          <li><a href="#none" class="link_gnb">HOME</a></li>
+          <li><a href="#none" class="link_gnb">모임개설신청</a></li>
+          <li><a href="#none" class="link_gnb">끼다소개</a></li>
+          <li><a href="#none" class="link_gnb">사용안내</a></li>
+          <li><a href="#none" class="link_gnb">문의하기</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="ggidaContent" role="main">
+    <div id="cMain">
+      <div id="mFeature">
+        <div class="side_menu navi_on" style="display:none;left:-1000px"> <!-- navi_on -->
+          <ul class="gnb_ggida">
+            <li><a href="#none" class="link_gnb">HOME</a></li>
+            <li><a href="#none" class="link_gnb">모임개설신청</a></li>
+            <li><a href="#none" class="link_gnb">끼다소개</a></li>
+            <li><a href="#none" class="link_gnb">사용안내</a></li>
+            <li><a href="#none" class="link_gnb">문의하기</a></li>
+          </ul>
+          <button type="button" class="btn_ggida btn_close"><span class="ico_ggida ico_close">메뉴 닫기</span></button>
+        </div>
+      </div>
+      <div id="mArticle">
+        <div class="box_g box_written">
+          <h2 class="tit_sub">모임 개설 신청</h2>
+          <form method="POST" action="/parties" enctype="multipart/form-data">
+            <fieldset>
+              <legend class="screen_out">모임 개설 신청 내용 입력폼</legend>
+              <div class="thumb_g thumb_upload">
+                <img src="/images/m640/thumb_temp.png" class="thumb_img" alt="">
+                <span class="item_upload">
+                  <label for="" class="lab_comm" ><span class="ico_ggida ico_upload"></span></label>
+                  <input id="" type="file" name="party[images]" class="inp_comm inp_upload" />
+                </span>
+              </div>
+              <ul class="list_writte">
+                <li>
+                  <div class="item_inp inp_type1"><label for="" class="lab_weite" >이름</label> <span class="cell_inp"><input id="" type="text" class="inp_weite" placeholder="이름 입력"/></span></div>
+                  <div class="item_inp inp_type2"><label for="" class="lab_weite" >핸드폰번호</label> <span class="cell_inp"><input id="" type="text" class="inp_weite" placeholder="000-0000-0000"/></span></div>
+                </li>
+                <li>
+                  <div class="item_inp "><label for="" class="lab_weite" >EMAIL</label> <span class="cell_inp"><input id="" type="text" class="inp_weite" placeholder="이메일을 입력하세요"/></span></div>
+                </li>
+                <li>
+                  <div class="item_inp "><label for="" class="lab_weite" >모임명</label> <span class="cell_inp"><input id="" type="text" name="party[title]" class="inp_weite" placeholder="모임명을 입력하세요"/></span></div>
+                </li>
+                <li>
+                  <div class="item_inp ">
+                      <label for="" class="lab_weite" >모임장소</label>
+                      <div class="cell_inp">
+                        <span class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
+                        <select name="place" class="inp_weite">
+                          <option value=""></option>
+                          <option value="청춘플랫폼">청춘플랫폼</option>
+                          <option value="무중력지대 대방동 나눔부엌">무중력지대 대방동 나눔부엌</option>
+                          <option value="춘삘딩 공유주방">청춘삘딩 공유주방</option>
+                          <option value="청년허브 창문카페">청년허브 창문카페</option>
+                          <option value="동팟 Sunday Kitchen">강동팟 Sunday Kitchen</option>
+                        </select>
+                      </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item_inp inp_type3">
+                    <label for="" class="lab_weite" >모임소개</label>
+                    <span class="cell_inp">
+                      <textarea class="inp_cmt" id="comment" name="comment" placeholder="모임내용에 대해 설명해주세요. (최대 ??자)"></textarea>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div class="item_inp ">
+                    <label for="" class="lab_weite" >모임유형</label>
+                    <div class="cell_inp">
+                      <span class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
+                      <select name="place" class="inp_weite">
+                        <option value=""></option>
+                        <option value="함께 장보고 요리하기">함께 장보고 요리하기</option>
+                        <option value="참여자가 각자 식재료 구매하고 함께 요리하기">참여자가 각자 식재료 구매하고 함께 요리하기</option>
+                        <option value="모임개설자가 식재료 구매하고 함께 요리하기">모임개설자가 식재료 구매하고 함께 요리하기</option>
+                        <option value="기타유형">기타유형</option>
+                      </select>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item_inp ">
+                    <label for="" class="lab_weite" >모임일정</label>
+                    <div class="cell_inp">
+                      <input type="text" id="datepicker" class="inp_weite" placeholder="모임일정을 지정해 주세요.">
+                    </div>
+                  </div>
+                  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+                  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                  <script>
+                      $( function() {
+                          $( "#datepicker" ).datepicker();
+                      } );
+                  </script>
+                </li>
+                <li>
+                  <div class="item_inp inp_type4">
+                    <label for="" class="lab_weite" >최소인원</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="0명"></div>
+                  </div>
+                  <div class="item_inp inp_type4">
+                    <label for="" class="lab_weite" >최대인원</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="0명"></div>
+                  </div>
+                  <div class="item_inp inp_type5">
+                    <label for="" class="lab_weite" >참가비</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="0원"></div>
+                  </div>
+                </li>
+              </ul>
+              <div class="wrap_button">
+                <button type="submit" class="btn_round btn_submit">신청</button>
+                <button type="button" class="btn_round btn_cancle">취소</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="cEtc"></div>
+  </div>
+   <div id="ggidaFoot"></div>
+ </div>
