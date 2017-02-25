@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def render_default_error(exception)
-    logger.i exception
-    render json: { error: exception.message, code: exception.error_code, objects: exception.objects,
-                   client_msg: exception.client_msg }, status: exception.status_code
+    # render json: { error: exception.message, code: exception.error_code, objects: exception.objects,
+    # client_msg: exception.client_msg }, status: exception.status_code
   end
 end
