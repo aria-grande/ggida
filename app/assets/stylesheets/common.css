@@ -92,6 +92,8 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .inp_type4 .cell_inp{margin-right:12px}
 .inp_type5{float:right;width:51.4%}
 .inp_type5 .inp_weite{margin-right:5px;text-align:right}
+.inp_type6 .cell_inp{float:left;width:38%}
+.inp_type6 .cell_inp:nth-of-type(2){float:right}
 .list_writte li{overflow:hidden}
 
 .wrap_button{overflow:hidden;margin:42px 0px 33px;font-size: 0;}
@@ -110,9 +112,10 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .list_contact{padding:0 32px 38px}
 .list_contact li{margin-top:40px;border-radius:3px}
 .list_contact li:first-child{margin-top:0}
-.list_contact .cont_contact{position:relative;background-color:#fff;-webkit-box-shadow:0 10px 15px 0 rgba(0,0,0,.05);box-shadow:0 10px 15px 0 rgba(0,0,0,.05)}
+.list_contact .cont_contact{position:relative;-webkit-box-shadow:0 10px 15px 0 rgba(0,0,0,.05);box-shadow:0 10px 15px 0 rgba(0,0,0,.05)}
 .list_contact .cont_contact:before{content:'';position:absolute;bottom:0;left:50%;width:70%;height:10px;margin-left: -35%;-webkit-box-shadow:0 15px 20px 0 rgba(0,0,0,.05);box-shadow:0 15px 20px 0 rgba(0,0,0,.05)}
-.list_contact .link_ask{display:block;height:148px;padding:20px 24px 0;font-size:13px;line-height:16px;color:#7c7c7c}
+.list_contact .cont_contact .thumb_g{border-top-left-radius:3px;border-top-right-radius:3px}
+.list_contact .link_ask{display:block;height:148px;padding:20px 24px 0;font-size:13px;line-height:16px;background-color:#fff;color:#7c7c7c}
 .list_contact .desc_contact{position:relative;height:100%}
 .list_contact .tit_contact{display:block;display:-webkit-box;overflow:hidden;max-height:44px;font-weight:200;font-size:18px;line-height:21px;color:#444;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;word-break:break-all;-webkit-box-orient:vertical;-webkit-line-clamp:2;pointer-events:none}
 .list_contact .txt_contact{display:block;margin-top:4px;font-weight:200;letter-spacing:1px}
