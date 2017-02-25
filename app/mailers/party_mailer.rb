@@ -1,5 +1,5 @@
 class PartyMailer < ApplicationMailer
-  default from: 'from@example.com'
+  default from: 'noreply@ggida.org'
 
   def request_party(party)
   	@party = party
