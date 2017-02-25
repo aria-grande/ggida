@@ -3,7 +3,7 @@ class ManagersController < ApplicationController
   before_action :authenticate_user!
 
   def parties
-    @parties = Party.pending_approval
+    @parties = Party.pending_approval.order(id: :desc)
   end
   def judge
     @party = Party.find_by_id(params[:id])

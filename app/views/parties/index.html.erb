@@ -4,7 +4,7 @@
     <% @parties.each_with_index do |party, idx| %>
       <li class="<%=party.state=="accepting"?"on":""%>" data-idx="<%=idx%>">
         <div class="cont_contact">
-          <div class="thumb_g"><img src="http://file.ggida.org/img/<%=party.id%>_thumb_<%=party.images_file_name%>" class="thumb_img" alt="" /></div>
+          <div class="thumb_g"><img src="http://file.ggida.org/img/<%=party.id%>_medium_<%=party.images_file_name%>" class="thumb_img" alt="" /></div>
           <div href="#none" class="link_ask">
             <div class="desc_contact">
               <strong class="tit_contact"><%=party.title%></strong>
