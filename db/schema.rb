@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225022113) do
+ActiveRecord::Schema.define(version: 20170225051301) do
 
   create_table "kitchens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20170225022113) do
     t.string   "images_content_type"
     t.integer  "images_file_size"
     t.datetime "images_updated_at"
+    t.string   "applier_name",                    null: false
+    t.string   "type"
   end
 
 end
