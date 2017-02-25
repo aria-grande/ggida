@@ -1,2 +1,30 @@
 <h1>관리자용 메뉴</h1>
-<h2>승인 대기 중인 모임들, <%= @parties.count %>개 </h2>
+<h2> </h2>
+
+<div id="mArticle">
+  <div class="box_g box_written">
+    <h2 class="tit_sub">신청 모임 확인 (승인대기중: <%= @parties.count %>개) </h2>
+
+    <ul class="list_contact">
+      <% @parties.each_with_index do |party, idx| %>
+          <li class="on" data-idx="<%=idx%>">
+            <div class="cont_contact">
+              <div class="thumb_g"><img src="http://file.ggida.org/img/<%=party.id%>_thumb_<%=party.images_file_name%>" class="thumb_img" alt="" /></div>
+              <div href="#none" class="link_ask">
+                <div class="desc_contact">
+                  <strong class="tit_contact"><%=party.title%></strong>
+                  <span class="txt_contact"><%=party.start_date.strftime("%m.%d %H시")%>, <%=party.place%></span>
+                  <a href="/parties/<%=party.id%>">
+                    <span class="contact_r"><em>자세히 보기</em></span>
+                  </a>
+
+                </div>
+              </div>
+              <div class="bg_dimmed"></div>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>
