@@ -97,6 +97,9 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .inp_type4 .cell_inp{margin-right:12px}
 .inp_type5{float:right;width:51.4%}
 .inp_type5 .inp_weite{margin-right:5px;text-align:right}
+.inp_type6 .cell_inp{float:left;width:38%}
+.inp_type6 .cell_inp:nth-of-type(2){float:right}
+
 .list_writte li{overflow:hidden}
 .btn_round{display:block;height:32px;padding-top:16px;border:1px solid #ff6800;border-radius:44px;font-size:16px;line-height:18px;color:#ff6800;text-align:center}
 .btn_round.btn_submit{background-color:#ff6800;color:#fff}
@@ -105,7 +108,7 @@ button.btn_round{height:50px;padding-top:4px}
 .wrap_button{overflow:hidden;margin:42px 0px 33px;font-size:0}
 .wrap_button li{float:left;width:50%}
 .wrap_button li:first-child{float:right}
-.wrap_button .btn_cancle{margin-right:8px}
+.wrap_button .btn_cancel{margin-right:8px}
 .wrap_button .btn_submit{margin-left:8px}
 
 /* 메인 홈_탑 비주얼 영역 */
@@ -159,10 +162,22 @@ button.btn_round{height:50px;padding-top:4px}
 .info_kitchen .tit_kitchen{display:block;overflow:hidden;font-weight:500;font-size:17px;line-height:20px;color:#444;letter-spacing:1.3px}
 .info_kitchen .txt_kitchen{display:block;overflow:hidden;margin-top:9px;font-weight:200;font-size:15px;line-height:19px;color:#7c7c7c;letter-spacing:1px}
 
+.layer_ggida{position:absolute;top:0;left:0;width:100%;height:100%}
+.layer_ggida .overlay{display:block;width:100%;height:100%;z-index:10;background:rgba(0,0,0,.5)}
+.layer_ggida .inner_layer{position:absolute;left:0;bottom:0;width:100%;z-index:20;background:#f5f5f5;transform:translateZ(0)}
+.layer_ggida .tit_layer{display:block;padding-bottom:14px;font-weight:normal;font-size:22px;line-height:27px;text-align:center}
+.layer_ggida .tit_layer .emph_g{display:block;margin:25px 0 4px;font-size:16px;line-height:19px}
+.layer_ggida .box_written{overflow-y:scroll;-webkit-overflow-scrolling:touch}
+.wrap_button2{overflow:hidden;margin:0 32px 0;border-top:1px solid #999}
+.wrap_button2 .btn_layer{display:block;width:50%;padding:25px 0 26px;font-size:16px;line-height:19px;text-align:center}
+.wrap_button2 .btn_cancel{position:relative;color:#444}
+.wrap_button2 .btn_submit{float:right;color:#ff6800}
 
-
-
-
+.wrap_check{position:relative;margin:32px 0;text-align:right}
+.wrap_check .input_check {position:absolute;top:0;left:0;width:0;height:0;line-height:0;opacity:0;filter:alpha(opacity=0)}
+.wrap_check .lab_check{display:inline-block;font-size:16px;line-height:32px;color:#444}
+.wrap_check .ico_check {width:30px;height:30px;margin-left:16px;background-position:-30px -48px}
+.wrap_check.check .ico_check{background-position:-64px -48px}
 
 @media
 only screen and (max-width: 768px) {
@@ -173,7 +188,10 @@ only screen and (max-width: 768px) {
     .side_menu .btn_close {position:absolute;right:0;top:0;width:39px;height:50px}
 }
 
-
+@media
+only screen and (min-width:320px) and (max-width:359px) {
+	.layer_ggida .box_written{height:310px}
+}
 @media
 only screen and (max-device-height:480px) {
     .gnb_ggida li{margin-top:30px}
@@ -187,5 +205,5 @@ only screen and (max-device-height:480px) {
 only screen and (-webkit-min-device-pixel-ratio:2),
 only screen and (min-device-pixel-ratio:2),
 only screen and (min-resolution:2dppx) {
-    .ico_ggida{background-image:url(/images/m640/ico_ggida.png);-webkit-background-size:100px 100px;background-size:100px 100px}
+    .ico_ggida{background-image:url(/images/m640/ico_ggida.png);-webkit-background-size:100px 120px;background-size:100px 120px}
 }
