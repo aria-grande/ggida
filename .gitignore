@@ -13,6 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+/.idea/*
+
 /db/schema.rb
 
 /config/database.yml
