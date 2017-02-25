@@ -19,16 +19,24 @@
     <div id="ggidaHead" class="ggida_head " role="banner"> <!-- box_visual 영역 사라지면 fixed_head 클래스 추가-->
       <div class="inner_head">
         <h1 class="screen_out">끼니를 다함께</h1>
-        <a href="#none" class="btn_ggida btn_navi"><span class="ico_ggida ico_navi">메뉴열기</span></a>
+        <a href="javascript:;" class="btn_ggida btn_navi"><span class="ico_ggida ico_navi">메뉴열기</span></a>
         <div id="ggidaGnb" role="navigation">
           <h2 class="screen_out">끼다 메인메뉴</h2>
           <ul class="gnb_ggida">
             <li><a href="#none" class="link_gnb">HOME</a></li>
-            <li><a href="#none" class="link_gnb">모임개설신청</a></li>
+            <% if current_manager %>
+                <li><a href="javascript:;" class="link_gnb">신청모임확인</a></li>
+            <% else %>
+                <li><a href="#none" class="link_gnb">모임개설신청</a></li>
+            <% end %>
             <li><a href="#none" class="link_gnb">끼다소개</a></li>
             <li><a href="#none" class="link_gnb">사용안내</a></li>
             <li><a href="#none" class="link_gnb">문의하기</a></li>
+            <% if current_manager %>
+              <li><a href="javascript:;" class="link_gnb btn_logout">로그아웃</a></li>
+            <% end %>
           </ul>
+          <button type="button" class="btn_ggida btn_close"><span class="ico_ggida ico_close">메뉴 닫기</span></button>
         </div>
       </div>
     </div>  <!-- //header-->
@@ -38,6 +46,36 @@
     <!-- 여기까지 푸터 -->
     <div id="ggidaFoot"></div> <!-- //Footer -->
   </div>
-
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var Header = (function() {
+        var elem = $("#ggidaHead");
+        var opener = elem.find(".btn_navi");
+        var closeButton = elem.find(".btn_close");
+        var navigator = elem.find("#ggidaGnb");
+        var logoutButton = elem.find(".btn_logout");
+        (function init() {
+          opener.click(function() {
+            navigator.show();
+          });
+          closeButton.click(function() {
+            navigator.hide();
+          });
+          logoutButton.click(function() {
+            $.ajax( {
+              url: '/managers/sign_out',
+              type: 'DELETE',
+              success: function(result) {
+                window.location.href = "/managers/sign_in";
+              },
+              error: function(error) {
+                console.log(error);
+              }
+            });
+          });
+        })();
+      })();
+    });
+  </script>
   </body>
 </html>
