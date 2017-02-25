@@ -1,28 +1,25 @@
-<% flash.each do |key, value| %>
-    <div class="alert alert-<%= key.eql?('notice') ? 'info' : 'danger'%>"><%= value %></div>
-<% end %>
 <div id="ggidaContent" class="cont_main" role="main">
   <div id="cMain">
-      <div id="mArticle">
-        <div class="box_g box_sign">
-          <img src="/images/m640/img_logo.png" class="logo_img" alt="끼다 로고">
-          <form action="/managers/sign_in" method="post" class="form-horizontal">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-            <div class="form-group">
-              <label class="col-sm-2 control-label">Email</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" name="manager[email]" placeholder="이메일 입력" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" name="manager[password]" placeholder="비밀번호 입력" />
-              </div>
-            </div>
-            <button type="submit" class="btn btn-default">로그인</button>
-          </form>
-        </div>
+    <div id="mArticle">
+      <div class="box_g box_sign">
+        <img src="/images/m640/img_logo.png" class="logo_img" alt="끼다 로고">
+        <h3 class="tit_login">로그인</h3>
+        <form action="/managers/sign_in" method="post" class="form-horizontal">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <div class="item_inp ">
+            <label for="" class="lab_weite" >EMAIL</label><div class="cell_inp"><input type="text" id="datepicker" class="inp_weite" name="manager[email]" placeholder="ggida@mail.com"></div>
+          </div>
+          <div class="item_inp ">
+            <label for="" class="lab_weite" >PASSWORD</label><div class="cell_inp"><input type="password" id="datepicker" class="inp_weite" name="manager[password]" placeholder="패스워드를 입력해주세요"></div>
+          </div>
+          <button type="submit" class="btn_round btn_submit">로그인</button>
+          <% flash.each do |_, value| %>
+              <span class="txt_error"><%= value %></span>
+          <% end %>
+        </form>
+        <div class="cell_link"><a href="#none" class="link_info">비밀번호</a><span class="txt_slash"> / </span><a href="#none" class="link_info">이메일 계정 찾기</a></div>
+        <div class="cell_link"><a href="http://naver.me/G7QjLFrW" class="link_info">중간관리자 신청</a></div>
       </div>
+    </div>
   </div>
 </div>
