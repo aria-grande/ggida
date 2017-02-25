@@ -45,36 +45,58 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 #kakaoIndex{overflow:hidden;position:absolute;left:-9999px;width:0;height:1px}
 #ggidaGnb{display:none}
 
+.tit_sub{display:block;padding:92px 0 23px;font-weight:400;font-size:18px;line-height21px;color:#ff5200;text-align:center}
 .btn_ggida{position:absolute;top:0;left:0;padding:30px 0 0 30px}
 .btn_navi{display:block;padding:30px 0 0 30px}
 .btn_navi .ico_navi{width:25px;height:17px;background-position:0 -44px}
 .btn_close{}
 .btn_close .ico_close{width:25px;height:17px;margin-left:2px;background-position:-30px -44px}
+.inp_comm{position:absolute;top:0;left:0;width:100%;height:100%;border:0 none;outline:0;background:transparent}
+.inp_upload{font-size:1px;line-height:1px;opacity:0;color:transparent}
+.lab_comm{display:block}
 
-
-.ggida_head{position:fixed;top:0;left:0;z-index:99}
+/* header */
+.ggida_head{position:absolute;top:0;left:0;z-index:99;width:100%}
 .ggida_head .tit_head{display:none}
-.fixed_head{width:100%;height:68px;background-color:rgba(255,255,255,.85);-webkit-box-shadow:0 2px 3px 0 rgba(0,0,0,.05);box-shadow:0 2px 3px 0 rgba(0,0,0,.05)}
 .fixed_head .tit_head{display:block}
-.fixed_head .btn_navi .ico_navi{background-position:0 -66px}
+.fixed_head .btn_navi, .cont_sub .btn_navi{position:fixed;top:20px;left:20px;width:42px;height:38px;padding:22px 0 0 18px;border-radius:60px;background-color:#FF6800;-webkit-box-shadow:0 2px 10px 0 rgba(0,0,0,.25);box-shadow:0 2px 10px 0 rgba(0,0,0,.25)}
 .navi_on {display:block;left:0}
-
 
 .side_menu {display:none}
 .gnb_ggida{padding-top:114px}
 .gnb_ggida li{margin-top:60px;text-align:center}
 .gnb_ggida li:first-child{margin-top:0}
 .gnb_ggida .link_gnb{display:inline-block;font-weight:100;font-size:20px;line-height:24px;color:#fff;letter-spacing:.3em}
-
-
-
 .side_menu {
     background: -moz-linear-gradient(top, rgba(248,21,48,.9) 0%, rgba(228,89,1,.9) 45%, rgba(228,89,1,.9) 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(top, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f81530', endColorstr='#00e45901',GradientType=0 )
-}
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f81530', endColorstr='#00e45901',GradientType=0 )}
 
+
+.item_upload{position:absolute;top:50%;left:50%;margin:-22px 0 0 -22px}
+.item_upload .ico_upload{width:44px;height:44px;background-position:-44px 0}
+
+.item_inp{overflow:hidden;width:100%}
+.item_inp .lab_weite{display:block;margin-top:19px;color:#7c7c7c;letter-spacing:2px}
+.item_inp .cell_inp{display:block;height:30px;margin-top:12px;padding:9px 10px 5px 15px;border-radius:3px;background-color:#fff}
+.item_inp .inp_weite{display:block;width:100%;height:100%;border:0 none;font-size:13px;line-height:16px;outline:0;background-color: transparent}
+.item_inp .inp_cmt{display:block;overflow:auto;width:100%;min-height:60px;border:0 none;box-sizing:border-box;-webkit-box-sizing:border-box;resize:none;outline:0;font-size:15px;letter-spacing:-0.025em;color:#444}
+.item_inp .txt_label{display:block;margin-top:3px;font-size:13px;line-height:16px;color:#999}
+
+.inp_type1{float:left;width:33%}
+.inp_type2{float:left;width:67%}
+.inp_type2 .lab_weite, .inp_type2 .cell_inp{margin-left:12px}
+.inp_type3 .cell_inp{height:153px;padding:14px 15px 0}
+.inp_type4{float:left;width:24.2%}
+.inp_type4 .cell_inp{margin-right:12px}
+.inp_type5{float:right;width:51.4%}
+.inp_type5 .inp_weite{margin-right:5px;text-align:right}
+.list_writte li{overflow:hidden}
+
+.wrap_button{}
+.wrap_button .btn_round{display:inline-block}
+.wrap_button .btn_submit{}
 
 .box_visual{position:relative;text-align:center}
 .box_visual .inner_g{position:absolute;top:50%;left:0;width:100%;padding-top:12px;margin-top:-121px}
@@ -95,7 +117,11 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .list_contact .on .contact_r{border:1px solid #ff6800;color:#ff5300}
 
 /* 로그인 */
-.box_signin{padding-top:42px}
+.box_sign{padding-top:42px}
+
+/*  */
+.box_written{margin:0 32px}
+.thumb_upload{position:relative;overflow:hidden;border-top-left-radius:3px;border-top-right-radius:3px}
 
 @media
 only screen and (max-width: 768px) {
