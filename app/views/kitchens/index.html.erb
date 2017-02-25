@@ -2,6 +2,8 @@
 
 <h1>Kitchens</h1>
 
+<div id="map" style="width:100%;height:350px;"></div>
+
 <table>
   <thead>
     <tr>
@@ -45,5 +47,26 @@
 </table>
 
 <br>
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=8b5c466ea7f19195aab58ee5c6810912"></script>
+<script>
+var positions = [];
+var latitute = 0;
+var longitute = 0;
+<% @kitchens.each do |kitchen| %>
+    positions.push({ title: '<%=kitchen.name%>', latlng: new daum.maps.LatLng(<%=kitchen.latitute%>, <%=kitchen.longitute%>) });
+    latitute += <%=kitchen.latitute%>;
+    longitute += <%=kitchen.longitute%>;
+<% end %>
+var mapContainer = document.getElementById('map'),  
+    mapOption = { 
+        center: new daum.maps.LatLng(latitute / positions.length, longitute / positions.length), // 지도의 중심좌표
+        level: 10
+    };
+var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+ 
+for (var i = 0; i < positions.length; i ++) {
+    new daum.maps.Marker({ map: map, position: positions[i].latlng, title : positions[i].title });
+}
+</script>
 
 <%= link_to 'New Kitchen', new_kitchen_path %>
