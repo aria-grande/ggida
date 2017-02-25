@@ -81,14 +81,16 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .item_inp{overflow:hidden;width:100%}
 .item_inp .lab_weite{display:block;margin-top:19px;color:#7c7c7c;letter-spacing:2px}
 .item_inp .cell_inp{display:block;height:30px;margin-top:12px;padding:9px 10px 5px 15px;border-radius:3px;background-color:#fff}
-.item_inp .inp_weite{display:block;width:100%;height:100%;border:0 none;font-size:13px;line-height:16px;outline:0;background-color: transparent}
-.item_inp .inp_cmt{display:block;overflow:auto;width:100%;min-height:60px;border:0 none;box-sizing:border-box;-webkit-box-sizing:border-box;resize:none;outline:0;font-size:15px;letter-spacing:-0.025em;color:#444}
-.item_inp .txt_label{display:block;margin-top:3px;font-size:13px;line-height:16px;color:#999}
+.item_inp .inp_weite{display:block;width:100%;height:100%;border:0 none;font-size:16px;line-height:20px;outline:0;background-color:transparent}
+.item_inp .inp_cmt{display:block;overflow:auto;width:100%;height:140px;min-height:60px;border:0 none;box-sizing:border-box;-webkit-box-sizing:border-box;resize:none;outline:0;font-size:16px;line-height:20px;color:#444}
+.item_inp .txt_label{display:block;margin-top:3px;font-size:16px;line-height:20px;color:#999}
+.item_inp .txt_weite{display:block;overflow:hidden;padding-top:4px;font-size:16px;line-height:20px;color:#444;text-overflow:ellipsis;white-space:nowrap}
 
 .inp_type1{float:left;width:33%}
 .inp_type2{float:left;width:67%}
 .inp_type2 .lab_weite, .inp_type2 .cell_inp{margin-left:12px}
 .inp_type3 .cell_inp{height:153px;padding:14px 15px 0}
+.inp_type3 .txt_weite{padding-top:0}
 .inp_type4{float:left;width:24.2%}
 .inp_type4 .cell_inp{margin-right:12px}
 .inp_type5{float:right;width:51.4%}
@@ -135,12 +137,18 @@ button.btn_round{height:50px;padding-top:4px}
 .cell_link .link_info{display:inline-block;font-size:13px;line-height:17px;color:#444}
 .cell_link + .cell_link{margin-top:14px}
 
-
-
-
 /* 모입 개설 신청 */
 .box_written{margin:0 32px}
 .thumb_upload{position:relative;overflow:hidden;border-top-left-radius:3px;border-top-right-radius:3px}
+
+/* 사용자_모임 상세 */
+.thumb_main{position:absolute;top:0;left:0;width:100%}
+.thumb_main:after{content:'';position:absolute;top:0;left:0;width:100%;height:140px;
+    background:-moz-linear-gradient(top, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background:-webkit-linear-gradient(top, rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background:linear-gradient(to bottom, rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#000',GradientType=0 )}
+.item_invite{}
 
 @media
 only screen and (max-width: 768px) {
