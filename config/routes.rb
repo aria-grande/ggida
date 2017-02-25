@@ -27,6 +27,14 @@
 #                         PATCH  /parties/:id(.:format)                        parties#update
 #                         PUT    /parties/:id(.:format)                        parties#update
 #                         DELETE /parties/:id(.:format)                        parties#destroy
+#                kitchens GET    /kitchens(.:format)                           kitchens#index
+#                         POST   /kitchens(.:format)                           kitchens#create
+#             new_kitchen GET    /kitchens/new(.:format)                       kitchens#new
+#            edit_kitchen GET    /kitchens/:id/edit(.:format)                  kitchens#edit
+#                 kitchen GET    /kitchens/:id(.:format)                       kitchens#show
+#                         PATCH  /kitchens/:id(.:format)                       kitchens#update
+#                         PUT    /kitchens/:id(.:format)                       kitchens#update
+#                         DELETE /kitchens/:id(.:format)                       kitchens#destroy
 #               introduce GET    /introduce(.:format)                          home#introduce
 #                   guide GET    /guide(.:format)                              home#guide
 #                    root GET    /                                             home#index
@@ -45,6 +53,9 @@ Rails.application.routes.draw do
   resources :parties do
     resources :participants, only: %i(index new create show update) do
     end
+  end
+
+  resources :kitchens do
   end
 
   get 'introduce', to: 'home#introduce'

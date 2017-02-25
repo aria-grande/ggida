@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224200316) do
+ActiveRecord::Schema.define(version: 20170225022113) do
 
-  create_table "managers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "kitchens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "maxPerson"
+    t.integer  "spaceType"
+    t.string   "equipment"
+    t.string   "opening_time"
+    t.string   "closed_time"
+    t.string   "fare"
+    t.string   "etc"
+    t.string   "notice"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "managers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username",           default: "", null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
@@ -26,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170224200316) do
     t.index ["email"], name: "index_managers_on_email", unique: true, using: :btree
   end
 
-  create_table "participants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "participants", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                   null: false
     t.string   "email",                  null: false
     t.string   "phone",                  null: false
@@ -37,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170224200316) do
     t.index ["party_id"], name: "index_participants_on_party_id", using: :btree
   end
 
-  create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "parties", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                           null: false
     t.string   "contents",                        null: false
     t.string   "place",                           null: false
