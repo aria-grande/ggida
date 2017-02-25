@@ -15,7 +15,7 @@ class PartiesController < ApplicationController
     raise Exceptions::DefaultError, {msg: party.errors.full_messages.first, status_code: :bad_request} unless party.valid?
 
     party.save
-    # PartyMailer.request_party(party).deliver_now
+    PartyMailer.request_party(party).deliver_now
     head :ok
   end
 
