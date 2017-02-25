@@ -1,2 +1,39 @@
-<h1>모임 상세 페이지</h1>
-<p><%= @party.inspect %></p>
+<h2>신청 모임 확인</h2>
+
+
+<div class=""><img src="http://file.ggida.org/img/<%=@party.id%>_thumb_<%=@party.images_file_name%>" class="" alt="" /></div><br>
+
+<div><strong class=""><%=@party.title%></strong></div><br>
+
+<div><span class=""><%=@party.left_seats%>명 남았습니다.</span></div><br>
+
+<div><p><%= @party.contents %></p></div><br>
+
+<table style="text-align: left;">
+  <tr>
+    <th>일자</th>
+    <th>모집인원</th>
+    <th>참가비</th>
+  </tr>
+  <tr>
+    <td><%= @party.start_date.strftime("%y.%m.%d %H시")%></td>
+    <td>최대 <%= @party.max_participants%>명</td>
+    <td><%= @party.price%>원</td>
+  </tr>
+  <tr>
+    <th>핸드폰번호</th>
+    <th>이메일</th>
+  </tr>
+  <tr>
+    <td><%= @party.contact_number%></td>
+    <td><%= @party.contact_email%></td>
+  </tr>
+</table>
+<br>
+
+<div><span class=""><%=@party.place%><span class="txt_bar">></span></span></div>
+<div><span class=""><%=@party.address%></span></div><br>
+
+<a href="#">
+  <span class="">신청하기</span>
+</a>
