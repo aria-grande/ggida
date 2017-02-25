@@ -1,0 +1,79 @@
+    <div id="mArticle">
+        <div class="box_g box_written">
+            <h2 class="tit_sub">신청 모임 확인</h2>
+                <div class="thumb_g thumb_upload">
+                    <img src="http://file.ggida.org/img/59_medium_sad.png" class="thumb_img" alt="">
+                </div>
+                <ul class="list_writte">
+                    <li>
+                        <div class="item_inp inp_type1">
+                        	<label for="" class="lab_weite" >이름</label>
+                        	<span class="cell_inp"><span class="txt_weite"><%=@party.applier_name%></span></span>
+                        </div>
+                        <div class="item_inp inp_type2">
+                        	<label for="" class="lab_weite" >핸드폰번호</label>
+                        	<span class="cell_inp"><span class="txt_weite"><%=@party.contact_number%></span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp ">
+                        	<label for="" class="lab_weite" >EMAIL</label> 
+                        	<span class="cell_inp"><span class="txt_weite"><%=@party.contact_email%></span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp ">
+                        	<label for="" class="lab_weite" >모임명</label>
+                        	<span class="cell_inp"><span class="txt_weite"><%=@party.title%></span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp ">
+                            <label for="" class="lab_weite" >모임장소</label>
+                            <div class="cell_inp">
+                                <span class="txt_weite"><%=@party.place%></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp inp_type3">
+                            <label for="" class="lab_weite" >모임소개</label>
+                            <span class="cell_inp">
+                              <span class="txt_weite"><%=@party.contents%></span>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp ">
+                            <label for="" class="lab_weite" >모임유형</label>
+                           	<span class="cell_inp"><span class="txt_weite"><%=@party.category%></span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp ">
+                            <label for="" class="lab_weite" >모임일정</label>
+                            <span class="cell_inp"><span class="txt_weite"><%=@party.start_date.strftime("%m월 %d일 %H시")%></span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_inp inp_type4">
+                            <label for="" class="lab_weite" >최소인원</label>
+                            <div class="cell_inp"><span class="txt_weite"><%=@party.min_participants%>명</span></div>
+                        </div>
+                        <div class="item_inp inp_type4">
+                            <label for="" class="lab_weite" >최대인원</label>
+                            <div class="cell_inp"><span class="txt_weite"><%=@party.max_participants%>명</span></div>
+                        </div>
+                        <div class="item_inp inp_type5">
+                            <label for="" class="lab_weite" >참가비</label>
+                            <div class="cell_inp"><span class="txt_weite"><%=@party.price%>원</span></div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="wrap_button"> 
+                    <li><a class="btn_round btn_submit">등록</a></li>
+                    <li><a class="btn_round btn_cancle">거절</a></li>
+                </ul>
+        </div>
+    </div>
+</div>

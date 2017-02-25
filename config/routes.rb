@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   resources :managers do
     collection do
       get 'parties', to: 'managers#parties'
+      get 'parties/:id', to: 'managers#judge'
     end
   end
 
