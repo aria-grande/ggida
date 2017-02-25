@@ -94,9 +94,12 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .inp_type5 .inp_weite{margin-right:5px;text-align:right}
 .list_writte li{overflow:hidden}
 
-.wrap_button{}
-.wrap_button .btn_round{display:inline-block}
-.wrap_button .btn_submit{}
+.wrap_button{overflow:hidden;margin:42px 0px 33px;font-size: 0;}
+.wrap_button li{float:left;width:50%}
+.wrap_button li:first-child{float:right}
+.wrap_button .btn_round{display:block;height:32px;padding-top:16px;border:1px solid #ff6800;border-radius:44px;font-size:14px;line-height: 17px;color:#ff6800;text-align: center}
+.wrap_button .btn_cancle{margin-right:8px}
+.wrap_button .btn_submit{margin-left:8px;background-color:#ff6800;color:#fff}
 
 .box_visual{position:relative;text-align:center}
 .box_visual .inner_g{position:absolute;top:50%;left:0;width:100%;padding-top:12px;margin-top:-121px}
@@ -119,7 +122,7 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 /* 로그인 */
 .box_sign{padding-top:42px}
 
-/*  */
+/* 모입 개설 신청 */
 .box_written{margin:0 32px}
 .thumb_upload{position:relative;overflow:hidden;border-top-left-radius:3px;border-top-right-radius:3px}
 
