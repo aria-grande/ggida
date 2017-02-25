@@ -2,20 +2,24 @@
 #
 # Table name: parties
 #
-#  id               :integer          not null, primary key
-#  title            :string(255)      not null
-#  contents         :string(255)      not null
-#  place            :string(255)      not null
-#  contact_number   :string(255)      not null
-#  contact_email    :string(255)
-#  address          :string(255)      not null
-#  state            :integer          default("pending_approval"), not null
-#  start_date       :datetime         not null
-#  min_participants :integer
-#  max_participants :integer
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  price            :integer          default(0)
+#  id                  :integer          not null, primary key
+#  title               :string(255)      not null
+#  contents            :string(255)      not null
+#  place               :string(255)      not null
+#  contact_number      :string(255)      not null
+#  contact_email       :string(255)
+#  address             :string(255)      not null
+#  state               :integer          default("pending_approval"), not null
+#  start_date          :datetime         not null
+#  min_participants    :integer
+#  max_participants    :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  price               :integer          default(0)
+#  images_file_name    :string(255)
+#  images_content_type :string(255)
+#  images_file_size    :integer
+#  images_updated_at   :datetime
 #
 
 class Party < ApplicationRecord
