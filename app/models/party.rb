@@ -47,6 +47,7 @@ class Party < ApplicationRecord
   scope :will_done, -> (expire_date) { where('state = 1 and start_date <= ?', expire_date)}
 
   enum state: {
+      deny: -1, # 거절
       pending_approval: 0, # 승인 대기 중
       accepting: 1, # 모집중
       done: 2 # 모집 완료

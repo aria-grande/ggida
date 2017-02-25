@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     collection do
       get 'parties', to: 'managers#parties'
       get 'parties/:id', to: 'managers#judge'
+      post 'parties/:id/:state', to: 'managers#result'
     end
   end
 

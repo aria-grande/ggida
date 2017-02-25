@@ -8,4 +8,11 @@ class ManagersController < ApplicationController
   def judge
     @party = Party.find_by_id(params[:id])
   end
+  def result
+    party = Party.find_by_id(params[:id])
+	party.state = Integer(params[:state])
+    party.save()
+    
+    redirect_to :action => :parties
+  end
 end
