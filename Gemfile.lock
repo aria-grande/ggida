@@ -83,6 +83,8 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-i18n (1.1.1)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.17)
@@ -225,6 +227,7 @@ DEPENDENCIES
   carrierwave (~> 0.11.0)
   devise (~> 4.2.0)
   devise-i18n
+  email_validator
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener

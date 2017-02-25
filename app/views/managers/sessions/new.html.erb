@@ -6,14 +6,8 @@
       <div id="mArticle">
         <div class="box_g box_sign">
           <img src="/images/m640/img_logo.png" class="logo_img" alt="끼다 로고">
-          <h3 class="">로그인</h3>
           <form action="/managers/sign_in" method="post" class="form-horizontal">
-            <div class="item_inp ">
-              <label for="" class="lab_weite" >EMAIL</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="ggida@mail.com"></div>
-            </div>
-
-
-
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <div class="form-group">
               <label class="col-sm-2 control-label">Email</label>
               <div class="col-sm-10">
@@ -28,20 +22,7 @@
             </div>
             <button type="submit" class="btn btn-default">로그인</button>
           </form>
-          <a href="#none" class=""link_info">비밀번호 </a>/ <a href="#none" class=""link_info">이메일 계정 찾기</div>
         </div>
       </div>
   </div>
 </div>
-
-<li>
-  <div class="item_inp inp_type4">
-    <label for="" class="lab_weite" >최소인원</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="0명"></div>
-  </div>
-  <div class="item_inp inp_type4">
-    <label for="" class="lab_weite" >최대인원</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="0명"></div>
-  </div>
-  <div class="item_inp inp_type5">
-    <label for="" class="lab_weite" >참가비</label><div class="cell_inp"><input type="number" id="datepicker" class="inp_weite" placeholder="0원"></div>
-  </div>
-</li>

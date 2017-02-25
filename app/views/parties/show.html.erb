@@ -10,30 +10,30 @@
 <div><p><%= @party.contents %></p></div><br>
 
 <table style="text-align: left;">
-  <tr>
-    <th>일자</th>
-    <th>모집인원</th>
-    <th>참가비</th>
-  </tr>
-  <tr>
-    <td><%= @party.start_date.strftime("%y.%m.%d %H시")%></td>
-    <td>최대 <%= @party.max_participants%>명</td>
-    <td><%= @party.price%>원</td>
-  </tr>
-  <tr>
-    <th>핸드폰번호</th>
-    <th>이메일</th>
-  </tr>
-  <tr>
-    <td><%= @party.contact_number%></td>
-    <td><%= @party.contact_email%></td>
-  </tr>
-</table>
+    <tr>
+      <th>일자</th>
+      <th>모집인원</th>
+      <th>참가비</th>
+    </tr>
+    <tr>
+      <td><%= @party.start_date.strftime("%y.%m.%d %H시")%></td>
+      <td>최대 <%= @party.max_participants%>명</td>
+      <td><%= @party.price%>원</td>
+    </tr>
+    <tr>
+      <th>핸드폰번호</th>
+      <th>이메일</th>
+    </tr>
+    <tr>
+      <td><%= @party.contact_number%></td>
+      <td><%= @party.contact_email%></td>
+    </tr>
+  </table>
 <br>
 
 <div><span class=""><%=@party.place%><span class="txt_bar">></span></span></div>
 <div><span class=""><%=@party.address%></span></div><br>
 
 <a href="#">
-  <span class="">신청하기</span>
+    <span class="">신청하기</span>
 </a>

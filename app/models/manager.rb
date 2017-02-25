@@ -20,4 +20,8 @@ class Manager < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :trackable, :validatable
 
+  validates :username, :email, :password, presence: true
+
+  validates :email, email: true, uniqueness: true
+
 end

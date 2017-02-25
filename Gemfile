@@ -10,6 +10,9 @@ gem 'rails-i18n', '~> 5.0.0'
 gem 'devise', '~> 4.2.0'
 gem 'devise-i18n'
 
+# Validator
+gem 'email_validator'
+
 # Simple, efficient background processing for Ruby.
 gem 'sidekiq'
 

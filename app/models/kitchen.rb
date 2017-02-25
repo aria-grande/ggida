@@ -20,4 +20,10 @@
 #
 
 class Kitchen < ApplicationRecord
+
+  validates :name, :address, :phone, :email, presence: true
+
+  enum spaceType: {
+      # TODO: fill
+  }
 end

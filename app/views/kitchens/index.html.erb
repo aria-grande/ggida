@@ -53,7 +53,7 @@ var positions = [];
 var latitute = 0;
 var longitute = 0;
 <% @kitchens.each do |kitchen| %>
-    positions.push({ title: '<%=kitchen.name%>', latlng: new daum.maps.LatLng(<%=kitchen.latitute%>, <%=kitchen.longitute%>), kitchenId : <%=kitchen.id%> });
+    positions.push({ title: '<%=kitchen.name%>', latlng: new daum.maps.LatLng(<%=kitchen.latitute%>, <%=kitchen.longitute%>) });
     latitute += <%=kitchen.latitute%>;
     longitute += <%=kitchen.longitute%>;
 <% end %>
@@ -65,19 +65,8 @@ var mapContainer = document.getElementById('map'),
 var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
  
 for (var i = 0; i < positions.length; i ++) {
-	var kitchen = positions[i];
-	console.log(kitchen);
-	k = kitchen;
-    var marker = new daum.maps.Marker({ map: map, position: kitchen.latlng, title : kitchen.title, clickable: true });
-    marker.kitchenId = kitchen.id;
-	daum.maps.event.addListener(marker, 'click', function() {
-		console.log(marker);
-		m = marker;
-		// location.href = '/kitchens/' + marker.kitchenId;
-	});
+    new daum.maps.Marker({ map: map, position: positions[i].latlng, title : positions[i].title });
 }
-
-
 </script>
 
 <%= link_to 'New Kitchen', new_kitchen_path %>
