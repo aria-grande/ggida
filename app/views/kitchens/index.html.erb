@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Kitchens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Maxperson</th>
+      <th>Spacetype</th>
+      <th>Equipment</th>
+      <th>Opening time</th>
+      <th>Closed time</th>
+      <th>Fare</th>
+      <th>Etc</th>
+      <th>Notice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kitchens.each do |kitchen| %>
+      <tr>
+        <td><%= kitchen.name %></td>
+        <td><%= kitchen.address %></td>
+        <td><%= kitchen.phone %></td>
+        <td><%= kitchen.email %></td>
+        <td><%= kitchen.maxPerson %></td>
+        <td><%= kitchen.spaceType %></td>
+        <td><%= kitchen.equipment %></td>
+        <td><%= kitchen.opening_time %></td>
+        <td><%= kitchen.closed_time %></td>
+        <td><%= kitchen.fare %></td>
+        <td><%= kitchen.etc %></td>
+        <td><%= kitchen.notice %></td>
+        <td><%= link_to 'Show', kitchen %></td>
+        <td><%= link_to 'Edit', edit_kitchen_path(kitchen) %></td>
+        <td><%= link_to 'Destroy', kitchen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kitchen', new_kitchen_path %>

@@ -1,5 +1,5 @@
 class PartiesController < ApplicationController
-  before_action :authenticate_user!, only: %i(new create update)
+  before_action :authenticate_user!, only: %i(create update)
 
   def new
   end
@@ -7,14 +7,14 @@ class PartiesController < ApplicationController
   def create
   	party = params.require(:party).permit!
   	party["state"] = 1
-	party["contents"] = 'conetents of the party'
-	party["place"] = 'startup campus'
-	party["contact_number"] = '01011111111'
-	party["contact_email"] = 'test@ggida.org'
-	party["address"] = 'South Korea'
-	party["min_participants"] =  3
-	party["max_participants"] =  5
-	party["start_date"] =  Time.zone.now
+    party["contents"] = 'conetents of the party'
+    party["place"] = 'startup campus'
+    party["contact_number"] = '01011111111'
+    party["contact_email"] = 'test@ggida.org'
+    party["address"] = 'South Korea'
+    party["min_participants"] =  3
+    party["max_participants"] =  5
+    party["start_date"] =  Time.zone.now
 	
     Party.create!(party)
   end
@@ -33,9 +33,5 @@ class PartiesController < ApplicationController
   
   def edit
     @party = Party.find_by_id(params[:id])
-  end
-  def list
-    @parties = Party.where.not(state: :pending_approval)
-    # @parties = Party.where(state: :pending_approval)
   end
 end

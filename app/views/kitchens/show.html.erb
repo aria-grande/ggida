@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kitchen.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @kitchen.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @kitchen.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @kitchen.email %>
+</p>
+
+<p>
+  <strong>Maxperson:</strong>
+  <%= @kitchen.maxPerson %>
+</p>
+
+<p>
+  <strong>Spacetype:</strong>
+  <%= @kitchen.spaceType %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @kitchen.equipment %>
+</p>
+
+<p>
+  <strong>Opening time:</strong>
+  <%= @kitchen.opening_time %>
+</p>
+
+<p>
+  <strong>Closed time:</strong>
+  <%= @kitchen.closed_time %>
+</p>
+
+<p>
+  <strong>Fare:</strong>
+  <%= @kitchen.fare %>
+</p>
+
+<p>
+  <strong>Etc:</strong>
+  <%= @kitchen.etc %>
+</p>
+
+<p>
+  <strong>Notice:</strong>
+  <%= @kitchen.notice %>
+</p>
+
+<%= link_to 'Edit', edit_kitchen_path(@kitchen) %> |
+<%= link_to 'Back', kitchens_path %>
