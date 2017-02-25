@@ -5,4 +5,7 @@ class ManagersController < ApplicationController
   def parties
     @parties = Party.pending_approval
   end
+  def judge
+    @party = Party.find_by_id(params[:id])
+  end
 end
