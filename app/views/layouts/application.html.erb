@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<%
-if @thumbnail == nil
-	@thumbnail = "http://ggida.org/images/meta_ggida.png"
-end
-%>
 <html>
   <head>
     <title><%=@title%>::끼니를 다함께</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:author" content="끼다" />
-	<meta property="og:site_name" content="끼니를 다함께" />
-	<meta property="og:title" content="<%=@title%>"/>
-	<meta property="og:image" content="<%=@thumbnail%>" />
-	<meta property="og:description" content="<%=@description%>" />
-	<meta property="og:url" content="http://ggida.org"/>
+    <meta property="og:author" content="끼다" />
+    <meta property="og:site_name" content="끼니를 다함께" />
+    <meta property="og:title" content="<%=@title%>"/>
+    <meta property="og:image" content="<%=@thumbnail || "http://ggida.org/images/meta_ggida.png"%>" />
+    <meta property="og:description" content="<%=@description%>" />
+    <meta property="og:url" content="http://ggida.org"/>
 
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
