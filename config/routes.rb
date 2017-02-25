@@ -5,6 +5,8 @@
 #         manager_session POST   /managers/sign_in(.:format)                   managers/sessions#create
 # destroy_manager_session DELETE /managers/sign_out(.:format)                  managers/sessions#destroy
 #        parties_managers GET    /managers/parties(.:format)                   managers#parties
+#                         GET    /managers/parties/:id(.:format)               managers#judge
+#                         POST   /managers/parties/:id/:state(.:format)        managers#result
 #                managers GET    /managers(.:format)                           managers#index
 #                         POST   /managers(.:format)                           managers#create
 #             new_manager GET    /managers/new(.:format)                       managers#new
@@ -37,7 +39,7 @@
 #                         DELETE /kitchens/:id(.:format)                       kitchens#destroy
 #               introduce GET    /introduce(.:format)                          home#introduce
 #                   guide GET    /guide(.:format)                              home#guide
-#                    root GET    /                                             home#index
+#                    root GET    /                                             parties#index
 #
 
 Rails.application.routes.draw do
@@ -47,6 +49,8 @@ Rails.application.routes.draw do
   resources :managers do
     collection do
       get 'parties', to: 'managers#parties'
+      get 'parties/:id', to: 'managers#judge'
+      post 'parties/:id/:state', to: 'managers#result'
     end
   end
 
@@ -60,5 +64,5 @@ Rails.application.routes.draw do
 
   get 'introduce', to: 'home#introduce'
   get 'guide', to: 'home#guide'
-  root to: 'home#index', as: :root
+  root to: 'parties#index', as: :root
 end

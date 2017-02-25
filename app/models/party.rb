@@ -1,5 +1,4 @@
 # == Schema Information
-# Schema version: 20170225051301
 #
 # Table name: parties
 #
@@ -22,7 +21,7 @@
 #  images_file_size    :integer
 #  images_updated_at   :datetime
 #  applier_name        :string(255)      not null
-#  type                :string(255)
+#  category            :string(255)
 #
 
 class Party < ApplicationRecord
@@ -47,6 +46,7 @@ class Party < ApplicationRecord
   scope :will_done, -> (expire_date) { where('state = 1 and start_date <= ?', expire_date)}
 
   enum state: {
+      deny: -1, # 거절
       pending_approval: 0, # 승인 대기 중
       accepting: 1, # 모집중
       done: 2 # 모집 완료

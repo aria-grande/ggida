@@ -1,6 +1,32 @@
-<h1>'모임A'의 참가자 리스트</h1>
-<% @participants.each_with_index do |participant, idx| %>
-    <div>
-      <p><%= participant.inspect %></p>
-    </div>
-<% end %>
+<div id="mArticle">
+  <div class="box_g box_contact">
+    <h2 class="tit_sub">'<%= @party.title %>'의 참가자 리스트</h2>
+
+    <ul class="list_contact">
+      <% @participants.each_with_index do |participant, idx| %>
+          <li class="on" data-idx="<%=idx%>">
+            <div class="cont_contact">
+              <strong class="tit_contact"><%=idx+1%>. <%= participant.name %></strong>
+              <span class="txt_contact"><%= participant.email %> / <%= participant.phone %></span>
+              <span class="txt_contact">
+                  신청일: <%= participant.created_at.strftime("%Y-%m-%d") %> /
+                  <%
+                    if participant.state == "accepted"
+                      status = "승인"
+                      color = "blue"
+                    elseif participant.state == "rejected"
+                      status = "거절"
+                      color = "red"
+                    else
+                      status = "신청대기"
+                      color = "gray"
+                    end
+                %><span style='color:<%=color%>'><%=status%></span>
+              </span>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>

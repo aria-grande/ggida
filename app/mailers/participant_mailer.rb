@@ -1,5 +1,5 @@
 class ParticipantMailer < ApplicationMailer
-  default from: 'from@example.com'
+  default from: 'noreply@ggida.org'
 
   def approved_email(participant)
     @participant = participant
