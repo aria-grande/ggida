@@ -1,5 +1,4 @@
 # == Schema Information
-# Schema version: 20170225051301
 #
 # Table name: parties
 #
@@ -22,7 +21,7 @@
 #  images_file_size    :integer
 #  images_updated_at   :datetime
 #  applier_name        :string(255)      not null
-#  type                :string(255)
+#  category            :string(255)
 #
 
 class Party < ApplicationRecord
