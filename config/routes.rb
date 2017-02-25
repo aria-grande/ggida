@@ -4,6 +4,15 @@
 #     new_manager_session GET    /managers/sign_in(.:format)                   managers/sessions#new
 #         manager_session POST   /managers/sign_in(.:format)                   managers/sessions#create
 # destroy_manager_session DELETE /managers/sign_out(.:format)                  managers/sessions#destroy
+#        parties_managers GET    /managers/parties(.:format)                   managers#parties
+#                managers GET    /managers(.:format)                           managers#index
+#                         POST   /managers(.:format)                           managers#create
+#             new_manager GET    /managers/new(.:format)                       managers#new
+#            edit_manager GET    /managers/:id/edit(.:format)                  managers#edit
+#                 manager GET    /managers/:id(.:format)                       managers#show
+#                         PATCH  /managers/:id(.:format)                       managers#update
+#                         PUT    /managers/:id(.:format)                       managers#update
+#                         DELETE /managers/:id(.:format)                       managers#destroy
 #      party_participants GET    /parties/:party_id/participants(.:format)     participants#index
 #                         POST   /parties/:party_id/participants(.:format)     participants#create
 #   new_party_participant GET    /parties/:party_id/participants/new(.:format) participants#new
@@ -26,6 +35,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :managers, controllers: { sessions: 'managers/sessions' }
+
+  resources :managers do
+    collection do
+      get 'parties'
+    end
+  end
 
   resources :parties do
     resources :participants, only: %i(index new create show update) do
