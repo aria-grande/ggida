@@ -40,6 +40,8 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .thumb_g{display:block;position:relative;width:100%}
 .bg_img{display:block;width:100%}
 .logo_img{display:block;width:70px;margin:0 auto}
+.txt_slash{display:inline-block;padding:0 4px 0 5px;font-size:13px;line-height:17px;color:#444}
+.txt_error{display:block;font-size:13px;line-height:17px;color:#ff5200;text-align:center} 
 
 /* layout */
 #kakaoIndex{overflow:hidden;position:absolute;left:-9999px;width:0;height:1px}
@@ -60,7 +62,7 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .ggida_head .tit_head{display:none}
 .fixed_head .tit_head{display:block}
 .fixed_head .btn_navi, .cont_sub .btn_navi{position:fixed;top:20px;left:20px;width:42px;height:38px;padding:22px 0 0 18px;border-radius:60px;background-color:#FF6800;-webkit-box-shadow:0 2px 10px 0 rgba(0,0,0,.25);box-shadow:0 2px 10px 0 rgba(0,0,0,.25)}
-.navi_on {display:block;left:0}
+.navi_on{display:block;left:0 !important}
 
 .side_menu {display:none}
 .gnb_ggida{padding-top:114px}
@@ -68,11 +70,10 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .gnb_ggida li:first-child{margin-top:0}
 .gnb_ggida .link_gnb{display:inline-block;font-weight:100;font-size:20px;line-height:24px;color:#fff;letter-spacing:.3em}
 .side_menu {
-    background: -moz-linear-gradient(top, rgba(248,21,48,.9) 0%, rgba(228,89,1,.9) 45%, rgba(228,89,1,.9) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background:-moz-linear-gradient(top, rgba(248,21,48,.9) 0%, rgba(228,89,1,.9) 45%, rgba(228,89,1,.9) 100%); /* FF3.6-15 */
+    background:-webkit-linear-gradient(top, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background:linear-gradient(to bottom, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f81530', endColorstr='#00e45901',GradientType=0 )}
-
 
 .item_upload{position:absolute;top:50%;left:50%;margin:-22px 0 0 -22px}
 .item_upload .ico_upload{width:44px;height:44px;background-position:-44px 0}
@@ -95,14 +96,17 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .inp_type6 .cell_inp{float:left;width:38%}
 .inp_type6 .cell_inp:nth-of-type(2){float:right}
 .list_writte li{overflow:hidden}
+.btn_round{display:block;height:32px;padding-top:16px;border:1px solid #ff6800;border-radius:44px;font-size:14px;line-height: 17px;color:#ff6800;text-align:center}
+.btn_round.btn_submit{background-color:#ff6800;color:#fff}
+button.btn_round{height:50px;padding-top:4px}
 
-.wrap_button{overflow:hidden;margin:42px 0px 33px;font-size: 0;}
+.wrap_button{overflow:hidden;margin:42px 0px 33px;font-size:0}
 .wrap_button li{float:left;width:50%}
 .wrap_button li:first-child{float:right}
-.wrap_button .btn_round{display:block;height:32px;padding-top:16px;border:1px solid #ff6800;border-radius:44px;font-size:14px;line-height: 17px;color:#ff6800;text-align: center}
 .wrap_button .btn_cancle{margin-right:8px}
-.wrap_button .btn_submit{margin-left:8px;background-color:#ff6800;color:#fff}
+.wrap_button .btn_submit{margin-left:8px}
 
+/* 메인 홈_탑 비주얼 영역 */
 .box_visual{position:relative;text-align:center}
 .box_visual .inner_g{position:absolute;top:50%;left:0;width:100%;padding-top:12px;margin-top:-121px}
 .box_visual .tit_visual{display:block;margin-top:16px;font-weight:300;font-size:18px;line-height:21px;color:#fff}
@@ -123,7 +127,16 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .list_contact .on .contact_r{border:1px solid #ff6800;color:#ff5300}
 
 /* 로그인 */
-.box_sign{padding-top:42px}
+.box_sign{margin:0 36px;padding-top:42px}
+.box_sign .tit_login{margin-top:11px;padding-bottom:15px;font-weight:normal;font-size:20px;line-height:24px;color:#444;text-align:center;letter-spacing:2px}
+.box_sign .btn_submit{width:150px;height:50px;margin:38px auto}
+.box_sign .txt_error{position:absolute;top:160px;left:0;width:100%}
+.cell_link{overflow:hidden;font-size:0;text-align:center}
+.cell_link .link_info{display:inline-block;font-size:13px;line-height:17px;color:#444}
+.cell_link + .cell_link{margin-top:14px}
+
+
+
 
 /* 모입 개설 신청 */
 .box_written{margin:0 32px}
