@@ -6,10 +6,10 @@ class PartiesController < ApplicationController
   end
 
   def create
-    kitchen = Kitchen.find_by_id(party_params[:kitchenId])
+    kitchen = Kitchen.find_by_id(party_params[:kitchen_id])
     raise Exceptions::DefaultError, {msg: 'kitchenId is empty', status_code: :bad_request} if kitchen.nil?
 
-    party = Party.new(party_params.except(:kitchenId))
+    party = Party.new(party_params)
     party.place = kitchen.name
     party.address = kitchen.address
     raise Exceptions::DefaultError, {msg: party.errors.full_messages.first, status_code: :bad_request} unless party.valid?
@@ -38,7 +38,7 @@ class PartiesController < ApplicationController
   protected
 
   def party_params
-    params.require(:party).permit(:title, :contents, :kitchenId, :contact_number, :contact_email, :state,
+    params.require(:party).permit(:title, :contents, :kitchen_id, :contact_number, :contact_email, :state,
                                   :start_date, :min_participants, :max_participants, :price, :images, :applier_name, :category)
   end
 end

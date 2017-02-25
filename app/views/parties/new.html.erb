@@ -119,7 +119,7 @@ function request_submit() {
                 <label for="" class="lab_weite" >모임장소</label>
                 <div class="cell_inp">
                   <span id="place_temp" class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
-                  <select id="place" name="party[kitchenId]" class="inp_weite">
+                  <select id="place" name="party[kitchen_id]" class="inp_weite">
                     <option value=""></option>
 				  <% @kitchens.each_with_index do |kitchen, idx| %>
                     <option value="<%=kitchen.id%>"><%=kitchen.name%></option>
