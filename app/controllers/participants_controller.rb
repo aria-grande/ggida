@@ -5,6 +5,7 @@ class ParticipantsController < ApplicationController
   end
 
   def index
+    @party = Party.find_by_id(params[:party_id])
     @participants = Party.find_by_id(params[:party_id]).participants
   end
 
