@@ -1,17 +1,92 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">끼니를 다함께</a>
-    </div>
-
-    <% if @manager.is_a?(Manager) %>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a data-method="delete" href="/managers/sign_out">로그아웃</a></li>
-        </ul>
-        <p class="navbar-text navbar-right">안녕하세요, <%= @manager&.username %>관리자님</p>
-    <% end %>
-  </div>
-</nav>
-<iframe title='굿바이 먹자먹! 행복했어♥ [먹고 자고 먹고_센토사편] 2회 20161227' width='640px' height='360px' src='http://videofarm.daum.net/controller/video/viewer/Video.html?vid=s90baAl8b8qXqqIm8mOOPnP&play_loc=undefined&startDuration=95&alert=true' frameborder='0' scrolling='no' ></iframe>
+<div id="kakaoIndex">
+	<a href="#kakaoBody">본문 바로가기</a>
+	<a href="#kakaoGnb">메뉴 바로가기</a>
+</div>
+<div id="ggidaWrap">
+	<div id="ggidaHead" class="ggida_head " role="banner"> <!-- box_visual 영역 사라지면 fixed_head 클래스 추가-->
+		<div class="inner_head">
+			<h1 class="tit_head"><a href="#none" class="link_logo"><span class="ico_ggida tit_logo">ggida</span></a></h1>
+			<a href="#none" class="btn_ggida btn_navi"><span class="ico_ggida ico_navi">메뉴열기</span></a>
+			<div id="ggidaGnb" role="navigation">
+				<h2 class="screen_out">끼다 메인메뉴</h2>
+				<ul class="gnb_ggida">
+					<li><a href="#none" class="link_gnb">HOME</a></li>
+					<li><a href="#none" class="link_gnb">모임개설신청</a></li>
+					<li><a href="#none" class="link_gnb">끼다소개</a></li>
+					<li><a href="#none" class="link_gnb">사용안내</a></li>
+					<li><a href="#none" class="link_gnb">문의하기</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="ggidaContent" class="cont_main" role="main">
+		<div id="cMain">
+			<div id="mFeature">
+				<div class="side_menu navi_on" style="display:none;left:-1000px"> <!-- navi_on -->
+					<ul class="gnb_ggida">
+						<li><a href="#none" class="link_gnb">HOME</a></li>
+						<li><a href="#none" class="link_gnb">모임개설신청</a></li>
+						<li><a href="#none" class="link_gnb">끼다소개</a></li>
+						<li><a href="#none" class="link_gnb">사용안내</a></li>
+						<li><a href="#none" class="link_gnb">문의하기</a></li>
+					</ul>
+          <button type="button" class="btn_ggida btn_close"><span class="ico_ggida ico_close">메뉴 닫기</span></button>
+				</div>
+			</div>
+			<div id="mSub">
+        <div class="box_visual">
+          <img src="/images/m640/bg_top.png" class="bg_img" alt="">
+          <div class="inner_g">
+            <img src="/images/m640/img_logo_ff.png" class="logo_img" alt="끼다 로고">
+            <strong class="tit_visual">함께 만드는 요리의 재미, 끼다!</strong>
+            <p class="txt_info">&#60;끼다&#62;는 정부 및 지자체를 중심으로 만들어진<br> 공유부엌을 이용하여 1인 가구 청년들이 보다<br>즐겁고, 건강하게 함께 밥을 먹을 수 있도록 만든<br>공유부엌 활성화 플랫폼입니다.</p>
+          </div>
+      </div>
+			<div id="mArticle">
+        <div class="box_g box_contact">
+          <ul class="list_contact">
+            <li class="on">
+              <div class="cont_contact">
+                <div class="thumb_g"><img src="/images/temp/temp_contact_01.png" class="thumb_img" alt=""></div>
+                <div href="#none" class="link_ask">
+                  <div class="desc_contact">
+                    <strong class="tit_contact">채식요리 같이 만들어요!</strong>
+                    <span class="txt_contact">03.15 12시, 청춘플랫폼</span>
+                    <span class="contact_r">3명 남았어요 <span class="txt_bar">|</span> <em>모임 참가 신청하기</em></span>
+                  </div>
+                </div>
+                <div class="bg_dimmed"></div>
+              </div>
+            </li>
+            <li class="">
+              <div class="cont_contact">
+                <div class="thumb_g"><img src="/images/temp/temp_contact_02.png" class="thumb_img" alt=""></div>
+                <div href="#none" class="link_ask">
+                  <div class="desc_contact">
+                    <strong class="tit_contact">브런치 함께 할까요?</strong>
+                    <span class="txt_contact">03.12 12시, 무중력지대</span>
+                    <span class="contact_r">모집이 마감되었습니다.</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="">
+              <div class="cont_contact">
+                <div class="thumb_g"><img src="/images/temp/temp_contact_02.png" class="thumb_img" alt=""></div>
+                <div href="#none" class="link_ask">
+                  <div class="desc_contact">
+                    <strong class="tit_contact">브런치 함께 할까요?</strong>
+                    <span class="txt_contact">03.12 12시, 무중력지대</span>
+                    <span class="contact_r">모집이 마감되었습니다.</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+		</div>
+		<div class="cEtc"></div>
+	</div>
+	<div id="ggidaFoot"></div>
+</div>

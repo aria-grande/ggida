@@ -17,7 +17,7 @@ input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
 input,textarea {-webkit-tap-highlight-color:rgba(0,0,0,0)}
 
 html, body{height:100%}
-body{background:red}
+body{background:#f5f5f5 !important}
 body,th,td,input,select,textarea,button{font-size:14px;line-height:1.5;font-family:'AppleSDGothicNeo','Malgun gothic','맑은 고딕',sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
 a{color:#333;text-decoration:none}
 a:active, a:hover{text-decoration:none}
@@ -31,3 +31,94 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .hide{display:none}
 .clear_g{display:block;overflow:visible;width:auto;clear:both}
 .clear_g:after{display:block;visibility:hidden;height:0;font-size:0;clear:both;content:''}
+
+/* common */
+.ico_ggida{display:inline-block;overflow:hidden;font-size:0;line-height:0;background:url(/images/m320/ico_ggida.png) no-repeat;text-indent:-9999px;vertical-align:top}
+.ico_shop{background-color:red}
+.link_cont{display:block;position:relative}
+.thumb_img{width:100%;vertical-align:top}
+.thumb_g{display:block;position:relative;width:100%}
+.bg_img{display:block;width:100%}
+.logo_img{display:block;width:70px;margin:0 auto}
+
+/* layout */
+#kakaoIndex{overflow:hidden;position:absolute;left:-9999px;width:0;height:1px}
+#ggidaGnb{display:none}
+
+.btn_ggida{position:absolute;top:0;left:0;padding:30px 0 0 30px}
+.btn_navi{display:block;padding:30px 0 0 30px}
+.btn_navi .ico_navi{width:25px;height:17px;background-position:0 -44px}
+.btn_close{}
+.btn_close .ico_close{width:25px;height:17px;margin-left:2px;background-position:-30px -44px}
+
+
+.ggida_head{position:fixed;top:0;left:0;z-index:99}
+.ggida_head .tit_head{display:none}
+.fixed_head{width:100%;height:68px;background-color:rgba(255,255,255,.85);-webkit-box-shadow:0 2px 3px 0 rgba(0,0,0,.05);box-shadow:0 2px 3px 0 rgba(0,0,0,.05)}
+.fixed_head .tit_head{display:block}
+.fixed_head .btn_navi .ico_navi{background-position:0 -66px}
+.navi_on {display:block;left:0}
+
+
+.side_menu {display:none}
+.gnb_ggida{padding-top:114px}
+.gnb_ggida li{margin-top:60px;text-align:center}
+.gnb_ggida li:first-child{margin-top:0}
+.gnb_ggida .link_gnb{display:inline-block;font-weight:100;font-size:20px;line-height:24px;color:#fff;letter-spacing:.3em}
+
+
+
+.side_menu {
+    background: -moz-linear-gradient(top, rgba(248,21,48,.9) 0%, rgba(228,89,1,.9) 45%, rgba(228,89,1,.9) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f81530', endColorstr='#00e45901',GradientType=0 )
+}
+
+
+.box_visual{position:relative;text-align:center}
+.box_visual .inner_g{position:absolute;top:50%;left:0;width:100%;padding-top:12px;margin-top:-121px}
+.box_visual .tit_visual{display:block;margin-top:16px;font-weight:300;font-size:18px;line-height:21px;color:#fff}
+.box_visual .txt_info{display:block;margin-top:26px;font-weight:200;font-size:13px;line-height:21px;color:#ffcfc2}
+
+.box_contact{margin-top:-24px}
+.list_contact{padding:0 32px 38px}
+.list_contact li{margin-top:40px;border-radius:3px}
+.list_contact li:first-child{margin-top:0}
+.list_contact .cont_contact{position:relative;background-color:#fff;-webkit-box-shadow:0 10px 15px 0 rgba(0,0,0,.05);box-shadow:0 10px 15px 0 rgba(0,0,0,.05)}
+.list_contact .cont_contact:before{content:'';position:absolute;bottom:0;left:50%;width:70%;height:10px;margin-left: -35%;-webkit-box-shadow:0 15px 20px 0 rgba(0,0,0,.05);box-shadow:0 15px 20px 0 rgba(0,0,0,.05)}
+.list_contact .link_ask{display:block;height:148px;padding:20px 24px 0;font-size:13px;line-height:16px;color:#7c7c7c}
+.list_contact .desc_contact{position:relative;height:100%}
+.list_contact .tit_contact{display:block;display:-webkit-box;overflow:hidden;max-height:44px;font-weight:200;font-size:18px;line-height:21px;color:#444;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;word-break:break-all;-webkit-box-orient:vertical;-webkit-line-clamp:2;pointer-events:none}
+.list_contact .txt_contact{display:block;margin-top:4px;font-weight:200;letter-spacing:1px}
+.list_contact .contact_r{position:absolute;bottom:24px;width:100%;height:26px;padding-top:12px;border:1px solid #bcbcbc;border-radius:40px;text-align:center}
+.list_contact .on .contact_r{border:1px solid #ff6800;color:#ff5300}
+
+/* 로그인 */
+.box_signin{padding-top:42px}
+
+@media
+only screen and (max-width: 768px) {
+    #kakaoGnb{display:none}
+	#mFeature {position:fixed;left:0;top:0;bottom:0;z-index:110}
+    .navi_on {bottom:auto;height:100%}
+    .side_menu {display:none;overflow-x:hidden;overflow-y:scroll;position:absolute;left:-1000px;top:0;bottom:0;width:100vw}
+    .side_menu .btn_close {position:absolute;right:0;top:0;width:39px;height:50px}
+}
+
+
+@media
+only screen and (max-device-height:480px) {
+    .gnb_ggida li{margin-top:30px}
+    .gnb_ggida li:first-child{margin-top:0}
+}
+
+
+
+/* ratio 2 */
+@media
+only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min-device-pixel-ratio:2),
+only screen and (min-resolution:2dppx) {
+    .ico_ggida{background-image:url(/images/m640/ico_ggida.png);-webkit-background-size:100px 100px;background-size:100px 100px}
+}
