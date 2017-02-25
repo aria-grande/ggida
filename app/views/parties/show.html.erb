@@ -1,6 +1,6 @@
 <%@title = @party.title%>
 <%@thumbnail = "http://file.ggida.org/img/#{@party.id}_medium_#{@party.images_file_name}"%>
-
+<%@description = "#{@party.contents[0..30]} ..."%>
 
 <script language="JavaScript" type="text/JavaScript">
     $(document).ready(function(){
