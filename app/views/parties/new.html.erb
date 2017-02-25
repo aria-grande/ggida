@@ -1,5 +1,7 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/assets/jquery.timepicker.css" />
+<script type="text/javascript" src="/assets/jquery.timepicker.js"></script>
 <script language="JavaScript" type="text/JavaScript">
 //<![CDATA[
 $(document).ready(function(){
@@ -28,16 +30,70 @@ $(document).ready(function(){
     });
 });
 
+window.onload = function(){
+    if ( $("#place").val() )  $("#place_temp").hide();
+    if ( $("#party_type").val() )  $("#type_temp").hide();
+}
+
 $( function() {
-    $( "#datepicker" ).datepicker();
+    $("#datepicker").datepicker({ changeMonth: true, changeYear: true, dateFormat: "yy-mm-dd", showButtonPanel: true, yearRange: "c-0:c+2", minDate: "-0d" });
+    $('#timepicker').timepicker({ 'timeFormat': 'h:i A' });
 } );
+
+function request_reset() {
+    document.getElementById("request_party").reset();
+}
+function request_submit() {
+    var form = document.getElementById("request_party");
+    //   var form = document.getElementById("request_party");alert(2);
+    if ( !$("#imglnp").val() ) {
+        alert("이미지를 선택해주세요.");
+        $("#imglnp").focus();
+    } else if ( !$("#applier_name").val() ) {
+        alert("이름을 입력해주세요.");
+        $("#applier_name").focus();
+    } else if ( !$("#contact_number").val() ) {
+        alert("핸드폰번호를 입력해주세요.");
+        $("#contact_number").focus();
+    } else if ( !$("#contact_email").val() ) {
+        alert("이메일을 입력해주세요.");
+        $("#contact_email").focus();
+    } else if ( !$("#title").val() ) {
+        alert("모임명을 입력해주세요.");
+         $("#title").focus();
+    } else if ( !$("#place").val() ) {
+        alert("모임 장소를 선택해주세요.");
+        $("#place").focus();
+    } else if ( !$("#party_type").val() ) {
+        alert("모임 유형을 선택해주세요.");
+        $("#party_type").focus();
+    } else if ( !$("#datepicker").val() ) {
+        alert("모임일을 지정해주세요.");
+        $("#datepicker").focus();
+    } else if( !$("#timepicker").val() ) {
+        alert("모임시간을 지정해주세요.");
+        $("#timepicker").focus();
+    } else if ( $("#min_participants").val() < 1 ) {
+        alert("최소인원을 입력해주세요.");
+        $("#min_participants").focus();
+    } else if ( $("#max_participants").val() < 2 ) {
+        alert("최대인원을 2명이상 입력해주세요.");
+        $("#max_participants").focus();
+    } else if ( !$("#price").val() ) {
+        $("#price").val(0);
+    } else {
+        $("#start_date").val($("#datepicker").val() + " " + $("#timepicker").val());
+        form.action = "/parties";
+        form.submit();
+    }
+}
 //]]>
 </script>
 
 <div id="mArticle">
   <div class="box_g box_written">
     <h2 class="tit_sub">모임 개설 신청</h2>
-    <form name="request_party" method="POST" action="/parties" enctype="multipart/form-data">
+    <form name="request_party" id="request_party" method="POST" enctype="multipart/form-data">
       <fieldset>
         <legend class="screen_out">모임 개설 신청 내용 입력폼</legend>
         <div class="thumb_g thumb_upload">
@@ -87,7 +143,7 @@ $( function() {
               <label for="" class="lab_weite" >모임유형</label>
               <div class="cell_inp">
                 <span id="type_temp" class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
-                <select id="type" name="type" class="inp_weite">
+                <select id="party_type" name="party[type]" class="inp_weite">
                   <option value=""></option>
                   <option value="함께 장보고 요리하기">함께 장보고 요리하기</option>
                   <option value="참여자가 각자 식재료 구매하고 함께 요리하기">참여자가 각자 식재료 구매하고 함께 요리하기</option>
@@ -98,12 +154,16 @@ $( function() {
             </div>
           </li>
           <li>
-            <div class="item_inp">
+            <div class="item_inp inp_type6">
               <label for="" class="lab_weite" >모임일정</label>
               <div class="cell_inp">
-                <input type="text" name="party[start_date]" id="datepicker" class="inp_weite" placeholder="모임일정을 지정해 주세요.">
+                <input type="text" name="start_date" id="datepicker" class="inp_weite" placeholder="모임일 지정" />
+              </div>
+              <div class="cell_inp">
+                <input type="text" name="start_time" id="timepicker" class="inp_weite" placeholder="모임시간 지정" />
               </div>
             </div>
+            <input type="hidden" name="party[start_date]" id="start_date" />
           </li>
           <li>
             <div class="item_inp inp_type4">
@@ -117,10 +177,9 @@ $( function() {
             </div>
           </li>
         </ul>
-        <div class="wrap_button">
-          <button type="submit" class="btn_round btn_submit">신청</button>
-          <button type="button" class="btn_round btn_cancle">취소</button>
-        </div>
+        <ul class="wrap_button">
+          <li><a class="btn_round btn_submit" onclick="request_submit();">신청</a></li>
+          <li><a class="btn_round btn_cancle" onclick="request_reset();">취소</a></li>
       </fieldset>
     </form>
   </div>
