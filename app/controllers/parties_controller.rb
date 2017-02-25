@@ -2,16 +2,20 @@ class PartiesController < ApplicationController
   before_action :authenticate_user!, only: %i(edit update)
 
   def new
+    @kitchens = Kitchen.all
   end
 
   def create
-    party = Party.create(party_params)
-    unless party.valid?
-      respond_to do |f|
-        f.html render :new
-        f.json render json: {error: party.errors.full_messages}, status: :bad_request
-      end
-    end
+    kitchen = Kitchen.find_by_id(party_params[:kitchenId])
+    raise Exceptions::DefaultError, {msg: 'kitchenId is empty', status_code: :bad_request} if kitchen.nil?
+
+    party = Party.new(party_params.except(:kitchenId))
+    party.place = kitchen.name
+    party.address = kitchen.address
+    raise Exceptions::DefaultError, {msg: party.errors.full_messages.first, status_code: :bad_request} unless party.valid?
+
+    party.save
+    # PartyMailer.request_party(party).deliver_now
     head :ok
   end
 
