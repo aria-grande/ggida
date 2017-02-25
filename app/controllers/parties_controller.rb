@@ -30,5 +30,12 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find_by_id(params[:id])
   end
-
+  
+  def edit
+    @party = Party.find_by_id(params[:id])
+  end
+  def list
+    @parties = Party.where.not(state: :pending_approval)
+    # @parties = Party.where(state: :pending_approval)
+  end
 end
