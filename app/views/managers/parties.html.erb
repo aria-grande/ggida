@@ -1,9 +1,6 @@
-<h1>관리자용 메뉴</h1>
-<h2> </h2>
-
 <div id="mArticle">
-  <div class="box_g box_written">
-    <h2 class="tit_sub">신청 모임 확인 (승인대기중: <%= @parties.count %>개) </h2>
+  <div class="box_g box_contact">
+    <h2 class="tit_sub">신청 모임 확인 (승인대기: <%= @parties.count %>개)</h2>
 
     <ul class="list_contact">
       <% @parties.each_with_index do |party, idx| %>

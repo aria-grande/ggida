@@ -1,6 +1,5 @@
 <div id="mArticle">
   <div class="box_g box_contact">
-    <h2 class="tit_sub">신청 모임 확인</h2>
     <ul class="list_contact">
     <% @parties.each_with_index do |party, idx| %>
       <li class="<%=party.state=="accepting"?"on":""%>" data-idx="<%=idx%>">
