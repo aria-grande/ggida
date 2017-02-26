@@ -7,12 +7,8 @@
 	.bg_img{position:absolute}
 </style>
 <script language="JavaScript" type="text/JavaScript">
-    $(document).ready(function(){
-        var form = document.forms['request_participant'];
-    });
-
     function request_submit() {
-        var form = document.getElementById("request_participant");
+        var form = $("#request_participant");
 
         if ( !$("#name").val() ) {
             alert("이름을 입력해주세요.");
@@ -24,8 +20,26 @@
             alert("이메일을 입력해주세요.");
             $("#email").focus();
         } else {
-            form.action = "/parties";
-            form.submit();
+          $.ajax({
+            url: "/parties/<%=@party.id%>/participants",
+            method: "POST",
+            data: form.serialize(),
+            headers: {
+              Accept: "application/json"
+            },
+            success: function(result) {
+              alert("참가 신청이 완료 되었습니다.");
+            },
+            error: function(res) {
+              if (res.status == 200) {
+                alert("참가 신청이 완료 되었습니다.");
+                closeLayer();
+              }
+              else {
+                alert('에러가 발생했습니다');
+              }
+            }
+          });
         }
     }
 </script>
@@ -65,14 +79,15 @@
       <strong class="tit_kitchen"><%=@party.place%></strong>
       <span class="txt_kitchen"><%=@party.address%></span>
     </div>
-    <a class="btn_round btn_submit" onclick="viewLayer()">신청하기</a></li>
+    <a class="btn_round btn_submit" onclick="viewLayer()">신청하기</a>
     <% if current_manager %>
       <a style="margin-top: 5px;" href="/parties/<%=@party.id%>/participants" class="btn_round">모임 신청자 현황</a></li>
     <% end %>
   </div>
 
 
-  <form name="request_participant" id="request_participant" method="POST" enctype="multipart/form-data">
+  <form name="request_participant" id="request_participant" method="POST" action="/parties/<%=@party.id%>/participants">
+    <input type="hidden" name="participant[party_id]" value="<%= @party.id %>"/>
     <fieldset>
       <div class="layer_ggida" style="display:none">
         <div class="overlay"></div>
@@ -82,7 +97,7 @@
             <ul class="list_writte">
               <li>
                 <div class="item_inp "><label for="" class="lab_weite" >이름</label> <span class="cell_inp"><input name="participant[name]" id="name" type="text" class="inp_weite" placeholder="이름을 입력하세요"/></span></div>
-                <div class="item_inp "><label for="" class="lab_weite" >핸드폰번호</label> <span class="cell_inp"><input name="participant[number]" id="number" type="text" class="inp_weite" placeholder="000-0000-0000"/></span></div>
+                <div class="item_inp "><label for="" class="lab_weite" >핸드폰번호</label> <span class="cell_inp"><input name="participant[phone]" id="number" type="text" class="inp_weite" placeholder="000-0000-0000"/></span></div>
                 <div class="item_inp "><label for="" class="lab_weite" >이메일</label> <span class="cell_inp"><input name="participant[email]" id="email" type="text" class="inp_weite" placeholder="이메일을 입력하세요"/></span></div>
               </li>
             </ul>
@@ -105,12 +120,13 @@
 
 
 
-  <script type="text/javascript">
-function viewLayer(){
-    $(".layer_ggida").css("display","");
-}
-function closeLayer(){
-    $(".layer_ggida").css("display","none");
-    document.getElementById("request_participant").reset();
+<script type="text/javascript">
+    function viewLayer(){
+      window.scrollTo(0, 0);
+      $(".layer_ggida").show();
     }
-  </script>
+    function closeLayer(){
+      $(".layer_ggida").hide();
+      document.getElementById("request_participant").reset();
+    }
+</script>
