@@ -56,6 +56,9 @@
       <span class="txt_kitchen"><%=@party.address%></span>
     </div>
     <a class="btn_round btn_submit" onclick="viewLayer()">신청하기</a></li>
+    <% if current_manager %>
+      <a style="margin-top: 5px;" href="/parties/<%=@party.id%>/participants" class="btn_round">모임 신청자 현황</a></li>
+    <% end %>
   </div>
 
 
@@ -68,9 +71,9 @@
             <strong class="tit_layer"><em class="emph_g"><%= @party.place%> </em><%= @party.title%></strong>
             <ul class="list_writte">
               <li>
-                <div class="item_inp "><label for="" class="lab_weite" >이름</label> <span class="cell_inp"><input id="name" type="text" class="inp_weite" placeholder="이름을 입력하세요"/></span></div>
-                <div class="item_inp "><label for="" class="lab_weite" >핸드폰번호</label> <span class="cell_inp"><input id="number" type="text" class="inp_weite" placeholder="000-0000-0000"/></span></div>
-                <div class="item_inp "><label for="" class="lab_weite" >이메일</label> <span class="cell_inp"><input id="email" type="text" class="inp_weite" placeholder="이메일을 입력하세요"/></span></div>
+                <div class="item_inp "><label for="" class="lab_weite" >이름</label> <span class="cell_inp"><input name="participant[name]" id="name" type="text" class="inp_weite" placeholder="이름을 입력하세요"/></span></div>
+                <div class="item_inp "><label for="" class="lab_weite" >핸드폰번호</label> <span class="cell_inp"><input name="participant[number]" id="number" type="text" class="inp_weite" placeholder="000-0000-0000"/></span></div>
+                <div class="item_inp "><label for="" class="lab_weite" >이메일</label> <span class="cell_inp"><input name="participant[email]" id="email" type="text" class="inp_weite" placeholder="이메일을 입력하세요"/></span></div>
               </li>
             </ul>
             <div class="wrap_check check"> <!-- focus 시 .check 추가 -->
@@ -98,5 +101,6 @@ function viewLayer(){
 }
 function closeLayer(){
     $(".layer_ggida").css("display","none");
+    document.getElementById("request_participant").reset();
     }
   </script>
