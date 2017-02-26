@@ -57,6 +57,7 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 .inp_comm{position:absolute;top:0;left:0;width:100%;height:100%;border:0 none;outline:0;background:transparent}
 .inp_upload{font-size:1px;line-height:1px;opacity:0;color:transparent}
 .lab_comm{display:block}
+.btn_logout{display:none;position:absolute;top:24px;right:37px;font-size:14px;color:#fff}
 
 /* header */
 .tit_logo{display:none;text-align:center}
@@ -78,8 +79,8 @@ address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
     background:linear-gradient(to bottom, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 45%,rgba(228,89,1,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f81530', endColorstr='#00e45901',GradientType=0 )}
 
-.item_upload{position:absolute;top:50%;left:50%;margin:-26px 0 0 -26px}
-.item_upload .ico_upload{width:52px}
+.item_upload{position:absolute;top:0;left:0;width:100%;font-weight:font-size:16px;line-height:20px;color:#fff;text-align:center}
+.item_upload .ico_upload{display:block;width:52px;margin:13.1% auto 4%}
 
 .item_inp{overflow:hidden;width:100%}
 .item_inp .lab_weite{display:block;margin-top:19px;color:#7c7c7c;letter-spacing:2px}
@@ -237,15 +238,16 @@ only screen and (min-width:768px) {
 
 	.box_sign{width:256px !important;padding-top:87px}
 	.box_sign .txt_error{top:266px}
-    .item_upload{margin:-42px 0 0 -42px}
+    .item_upload{font-size:13px;line-height:18px}
     .item_upload .ico_upload{width:84px}
-    
     
     .navi_on {bottom:auto;height:100%}
     .side_menu {display:none;overflow-x:hidden;overflow-y:scroll;position:absolute;left:-1000px;top:0;bottom:0;width:100vw}
     .side_menu .btn_close {position:absolute;right:0;top:0;width:39px;height:50px}
     .ggida_foot{position:fixed;bottom:0;left:0;width:100%;padding-bottom:40px}
 	.tit_sub{padding:49px 0 25px;font-size:18px;line-height:22px;text-align:left}
+	.btn_logout{display:block}
+	
 	.cont_sub .ggida_head{position:initial;-webkit-box-shadow: 0 2px 4px 0 rgba(177,177,177,.59);box-shadow: 0 2px 4px 0 rgba(177,177,177,.59)}
     .cont_sub .ggida_head .tit_logo{display:block;height:60px;background-color:#df3924}
     .cont_sub #ggidaGnb{display:block;background-color:#df3924}
