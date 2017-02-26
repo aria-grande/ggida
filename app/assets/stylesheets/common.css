@@ -245,7 +245,7 @@ only screen and (min-width:768px) {
     .item_upload{font-size:13px;line-height:18px}
     .item_upload .ico_upload{width:84px}
     .box_invite .tit_sub{display:block}
-    .box_invite .box_visual{height:auto}
+    .box_invite .box_visual{position:relative;height:auto}
     .list_invite li{float:left;width:50%}
     .info_kitchen .tit_kitchen{padding-top:10px}
     
