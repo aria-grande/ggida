@@ -220,7 +220,7 @@ only screen and (min-width:768px) {
 	.ggida_head{}
 	.tit_logo{display:block}
     #ggidaGnb{display:block}
-    .gnb_ggida{overflow:hidden;width:646px;margin:0 auto;padding-top:20px}
+    .gnb_ggida{overflow:hidden;width:516px;margin:0 auto;padding-top:20px}
     .gnb_ggida li{float:left;margin:0 0 0 42px}
     .gnb_ggida li:first-child{margin-left:0}
     .gnb_ggida .link_gnb{float:left;position:relative;width:95px;padding:14px 0;font-weight:500;font-size:14px;line-height:17px;letter-spacing:0}
