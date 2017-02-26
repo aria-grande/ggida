@@ -203,8 +203,8 @@ button.btn_round{height:50px;padding-top:4px}
 
 @media
 only screen and (min-width:320px) and (max-width:359px) {
-	.box_visual{height:430px}
-	.box_visual .top_main{height:430px}
+	.cont_top .box_visual{height:430px}
+	.cont_top .box_visual .top_main{height:430px}
 	.box_visual .inner_g{margin-top:-132px}
 	.list_contact .contact_r{letter-spacing:-1px}
 	.layer_ggida .box_written{height:310px}
