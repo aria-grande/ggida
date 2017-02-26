@@ -227,9 +227,9 @@ only screen and (min-width:768px) {
     .gnb_ggida .on .link_gnb:after{content:'';position:absolute;bottom:0;left:0;width:95px;height:2px;background-color:#fff}
     .btn_navi, .btn_close{display:none}
 	#mFeature {position:fixed;left:0;top:0;bottom:0;z-index:110}
-    .box_visual, .box_visual, .box_visual .top_main{height:571px}
-    .box_visual .top_main .img_main{width:100%;height:auto;margin-left:0}
-    .box_visual .logo_img{width:75px}
+    .cont_top .box_visual, .box_visual, .box_visual .top_main{height:571px}
+    .cont_top .box_visual .top_main .img_main{width:100%;height:auto;margin-left:0}
+    .cont_top .box_visual .logo_img{width:75px}
     .box_visual .inner_g{padding-top:27px}
     .box_visual .tit_visual{margin-top:35px;font-size:30px;line-height:36px}
     .box_visual .txt_info{margin-top:38px;font-size:18px;line-height:29px}
