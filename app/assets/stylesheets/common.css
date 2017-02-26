@@ -115,17 +115,17 @@ button.btn_round{height:50px;padding-top:4px}
 .wrap_button .btn_submit{margin-left:8px}
 
 /* 메인_탑 비주얼 영역 */
-.box_visual{overflow:hidden;position:relative;height:460px;text-align:center}
-.box_visual .top_main{height:460px}
-.box_visual .top_main .img_main{height:100%;margin-left:-30%}
-.box_visual .top_main:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+.cont_top .box_visual{overflow:hidden;position:relative;height:460px;text-align:center}
+.cont_top .box_visual .top_main{height:460px}
+.cont_top .box_visual .top_main .img_main{height:100%;margin-left:-30%}
+.cont_top .box_visual .top_main:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;
 	background:-moz-linear-gradient(top, rgba(248,21,48,.9) 0%, rgba(228,89,1,.9) 100%); /* FF3.6-15 */
     background:-webkit-linear-gradient(top, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 100%); /* Chrome10-25,Safari5.1-6 */
     background:linear-gradient(to bottom, rgba(248,21,48,.9) 0%,rgba(228,89,1,.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f81530', endColorstr='#00e45901',GradientType=0 )}
-.box_visual .inner_g{position:absolute;top:50%;left:0;width:100%;padding-top:12px;margin-top:-121px}
-.box_visual .tit_visual{display:block;margin-top:16px;font-weight:300;font-size:18px;line-height:21px;color:#fff}
-.box_visual .txt_info{display:block;margin-top:26px;font-weight:200;font-size:13px;line-height:21px;color:#ffcfc2}
+.cont_top .box_visual .inner_g{position:absolute;top:50%;left:0;width:100%;padding-top:12px;margin-top:-121px}
+.cont_top .box_visual .tit_visual{display:block;margin-top:16px;font-weight:300;font-size:18px;line-height:21px;color:#fff}
+.cont_top .box_visual .txt_info{display:block;margin-top:26px;font-weight:200;font-size:13px;line-height:21px;color:#ffcfc2}
 
 /* 메인_개설모임 목록 */
 .box_contact{margin-top:-86px}
@@ -230,9 +230,9 @@ only screen and (min-width:768px) {
     .cont_top .box_visual, .box_visual, .box_visual .top_main{height:571px}
     .cont_top .box_visual .top_main .img_main{width:100%;height:auto;margin-left:0}
     .cont_top .box_visual .logo_img{width:75px}
-    .box_visual .inner_g{padding-top:27px}
-    .box_visual .tit_visual{margin-top:35px;font-size:30px;line-height:36px}
-    .box_visual .txt_info{margin-top:38px;font-size:18px;line-height:29px}
+    .cont_top .box_visual .inner_g{padding-top:27px}
+    .cont_top .box_visual .tit_visual{margin-top:35px;font-size:30px;line-height:36px}
+    .cont_top .box_visual .txt_info{margin-top:38px;font-size:18px;line-height:29px}
     .box_contact{margin-top:0;padding:50px 0 80px}
     .list_contact{width:908px;margin:0 auto;padding:0 0 32px}
     .list_contact li{float:left;width:256px;margin:0 0 50px 35px}
