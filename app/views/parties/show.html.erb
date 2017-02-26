@@ -100,7 +100,7 @@
                 <div class="item_inp "><label for="" class="lab_weite" >이메일</label> <span class="cell_inp"><input name="participant[email]" id="email" type="text" class="inp_weite" placeholder="이메일을 입력하세요"/></span></div>
               </li>
             </ul>
-            <div class="wrap_check check"> <!-- focus 시 .check 추가 -->
+            <div class="wrap_check"> <!-- focus 시 .check 추가 -->
               <input id="checkAgree" name="checkAgree" type="checkbox" class="input_check">
               <label for="checkAgree" class="lab_check">개인정보제공에 동의합니다.<span class="ico_ggida ico_check"></span></label>
             </div>
@@ -128,4 +128,15 @@
       $(".layer_ggida").hide();
       document.getElementById("request_participant").reset();
     }
+    !(function init() {
+      var checkbox = $("#checkAgree");
+      checkbox.change(function() {
+        if ($("#checkAgree").is(':checked')) {
+          $(".wrap_check").addClass("check");
+        }
+        else {
+          $(".wrap_check").removeClass("check");
+        }
+      });
+    })();
 </script>
