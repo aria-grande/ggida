@@ -114,11 +114,15 @@
         var logoutButton = elem.find(".btn_logout");
         (function init() {
           opener.click(function() {
+            var wH = $(window).height();
             navigator.show();
+            $(".cont_top").addClass("navi_on");
             Scroll.disable();
+            navigator.css('height', wH);
           });
           closeButton.click(function() {
             navigator.hide();
+            $(".cont_top").removeClass("navi_on");
             Scroll.enable();
           });
           logoutButton.click(function() {
