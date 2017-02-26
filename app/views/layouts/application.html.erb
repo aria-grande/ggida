@@ -90,6 +90,17 @@
   </div>
   <script type="text/javascript">
     $(document).ready(function() {
+      var Scroll = (function() {
+        return {
+          enable: function() {
+            $('body').css('overflow-y', 'visible');
+          },
+          disable: function() {
+            $('body').css('overflow-y', 'hidden');
+          }
+        }
+      })();
+
       var Header = (function() {
         var opener = $(".btn_navi");
         var elem = $("#mFeature");
@@ -99,9 +110,11 @@
         (function init() {
           opener.click(function() {
             navigator.show();
+            Scroll.disable();
           });
           closeButton.click(function() {
             navigator.hide();
+            Scroll.enable();
           });
           logoutButton.click(function() {
             $.ajax( {
