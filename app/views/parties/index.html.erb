@@ -5,7 +5,7 @@
   <div class="box_g box_contact">
     <ul class="list_contact">
     <% @parties.each_with_index do |party, idx| %>
-      <li class="<%=party.state=="accepting"?"on":""%>" data-idx="<%=idx%>">
+      <li class="<%=party.accepting? ? "on":""%>" data-idx="<%=idx%>">
         <div class="cont_contact">
           <%
           thumbnail = "/images/m640/thumb_temp.png";
@@ -18,9 +18,15 @@
             <div class="desc_contact">
               <strong class="tit_contact"><%=party.title%></strong>
               <span class="txt_contact"><%=party.start_date.strftime("%m.%d %H시")%>, <%=party.place%></span>
-              <a href="/parties/<%=party.id%>">
-                <span class="contact_r"><%=party.left_seats%>명 남았어요 <span class="txt_bar">|</span> <em>모임 참가 신청</em></span>
-              </a>
+              <% if party.accepting? %>
+                <a href="/parties/<%=party.id%>">
+                  <span class="contact_r"><%=party.left_seats%>명 남았어요 <span class="txt_bar">|</span> <em>모임 참가 신청</em></span>
+                </a>
+              <% else %>
+                <a href="javascript:;">
+                  <span class="contact_r">모집이 마감되었습니다</span>
+                </a>
+              <% end %>
             </div>
           </div>
           <div class="bg_dimmed"></div>
