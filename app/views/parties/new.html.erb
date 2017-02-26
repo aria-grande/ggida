@@ -7,6 +7,11 @@
 $(document).ready(function(){
     var form = document.forms['request_party'];
 
+    $("#preview").click(function(){
+        $("#imglnp").click();
+        return false;
+    });
+
     $("#imglnp").change(function(){
         if (this.files && this.files[0]) {
             var file = this.files; // files 를 사용하면 파일의 정보를 알 수 있음
