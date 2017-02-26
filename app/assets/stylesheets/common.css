@@ -253,6 +253,9 @@ only screen and (min-width:768px) {
     .cont_sub #ggidaGnb{display:block;background-color:#df3924}
     .cont_sub .gnb_ggida{background-color:#df3924}
     .cont_sub .box_g{width:521px;margin:0 auto}
+    
+    .layer_ggida .inner_layer{left:50%;top:240px;bottom:auto;width:375px;margin:0 0 0 -188px}
+    .layer_ggida .box_written{overflow:hidden}
 }
 
 @media
