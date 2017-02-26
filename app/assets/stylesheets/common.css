@@ -217,9 +217,10 @@ only screen and (max-device-height:480px) {
 
 @media
 only screen and (min-width:768px) {
-	.ggida_head{}
+	.ggida_head{display:block}
 	.tit_logo{display:block}
     #ggidaGnb{display:block}
+    .cont_top #ggidaHead{z-index:99}
     .gnb_ggida{overflow:hidden;width:516px;margin:0 auto;padding-top:20px}
     .gnb_ggida li{float:left;margin:0 0 0 42px}
     .gnb_ggida li:first-child{margin-left:0}
