@@ -1,12 +1,15 @@
+<%@title = @party.title%>
+<%@thumbnail = "http://file.ggida.org/img/#{@party.id}_medium_#{@party.images_file_name}"%>
+<%@description = "#{@party.contents[0..30]} ..."%>
+
+<style>
+	.thumb_main{position:relative}
+	.bg_img{position:absolute}
+</style>
 <script language="JavaScript" type="text/JavaScript">
-    //<![CDATA[
     $(document).ready(function(){
         var form = document.forms['request_participant'];
     });
-
-    function request_reset() {
-        document.getElementById("request_participant").reset();
-    }
 
     function request_submit() {
         var form = document.getElementById("request_participant");
@@ -25,71 +28,89 @@
             form.submit();
         }
     }
-    //]]>
 </script>
 
-<h2>신청 모임 확인</h2>
-
-<div class=""><img src="http://file.ggida.org/img/<%=@party.id%>_thumb_<%=@party.images_file_name%>" class="" alt="" /></div><br>
-
-<div><strong class=""><%=@party.title%></strong></div><br>
-
-<div><span class=""><%=@party.left_seats%>명 남았습니다.</span></div><br>
-
-<div><p><%= @party.contents %></p></div><br>
-
-<table style="text-align: left;">
-    <tr>
-      <th>일자</th>
-      <th>모집인원</th>
-      <th>참가비</th>
-    </tr>
-    <tr>
-      <td><%= @party.start_date.strftime("%y.%m.%d %H시")%></td>
-      <td>최대 <%= @party.max_participants%>명</td>
-      <td><%= @party.price%>원</td>
-    </tr>
-    <tr>
-      <th>핸드폰번호</th>
-      <th>이메일</th>
-    </tr>
-    <tr>
-      <td><%= @party.contact_number%></td>
-      <td><%= @party.contact_email%></td>
-    </tr>
-  </table>
-<br>
-
-<div><span class=""><%=@party.place%><span class="txt_bar">></span></span></div>
-<div><span class=""><%=@party.address%></span></div><br>
-
-<a href="#">
-    <span class="">신청하기</span>
-</a>
-
-
-<!--여기는 party의 participant가 되기 위한 폼입니다.->
-<!--모달이나 레이어를 모르겠어서ㅠ 일단 임시로 아래에 폼을 만들어놓았습니다.-->
-<br>
-<hr>
-<form name="request_participant" id="request_participant" method="POST" enctype="multipart/form-data">
-  <fieldset>
-    <div><span style="color:#ff6800;">모임명</span></div>
-    <div><strong class=""><%=@party.title%></strong></div>
-    <div><span name="party[id]" id="id" style="display:none;"><%=@party.id%></span></div>
-    <ul class="list_writte">
-      <li>
-        <div class="item_inp inp_type1"><label for="" class="lab_weite" >이름</label> <span class="cell_inp"><input name="participant[name]" id="name" type="text" class="inp_weite" maxlength="100" placeholder="이름 입력"/></span></div>
-        <div class="item_inp inp_type2"><label for="" class="lab_weite" >핸드폰번호</label><span class="cell_inp"><input name="participant[phone]" id="number" type="tel" class="inp_weite" maxlength="100" placeholder="000-0000-0000"/></span></div>
-      </li>
-      <li>
-        <div class="item_inp "><label for="" class="lab_weite" >EMAIL</label> <span class="cell_inp"><input name="participant[email]" id="email" type="email" class="inp_weite" maxlength="100" placeholder="이메일을 입력하세요"/></span></div>
-      </li>
+  <div id="mArticle">
+<div class="box_g box_invite">
+  <h2 class="screen_out">모임 상세</h2>
+  <div class="box_visual">
+    <div class="thumb_g thumb_main">
+      <img src="/images/m640/bg_main.png" class="bg_img" alt="">
+      <%
+      thumbnail = "/images/m640/thumb_temp.png";
+      if (@party.images_file_name != nil)
+      	thumbnail = "http://file.ggida.org/img/#{@party.id}_medium_#{@party.images_file_name}"
+      end
+      %>
+      <img src="<%=thumbnail%>" class="thumb_img" alt="">
+    </div>
+  </div>
+  <div class="item_invite">
+    <strong class="tit_invite"><%=@party.title%></strong>
+    <em class="emph_g"><%=@party.left_seats%>명 남았습니다.</em>
+    <div class="txt_weite">
+      <span class="screen_out">모임소개</span>
+      <%= @party.contents %>
+    </div>
+    <ul class="list_invite">
+      <li><em class="em_txt">일자 </em><%= @party.start_date.strftime("%y.%m.%d %H시")%></li>
+      <li><em class="em_txt">모집인원 </em>최대 <%= @party.max_participants%>명</li>
+      <li><em class="em_txt">참가비 </em><%= @party.price%>원</li>
+      <li><em class="em_txt">핸드폰번호 </em><%= @party.contact_number%></li>
+      <li><em class="em_txt">이메일 </em><%= @party.contact_email%></li>
+      <!--<li><em class="em_txt">일자</em>17.02.28 오후 6시</li>-->
     </ul>
+    <div class="info_kitchen">
+      <img src="/images/m640/logo_kitchen_0<%= @party.kitchen_id%>.png" class="thumb_logo" alt="<%=@party.place%>">
+      <strong class="tit_kitchen"><%=@party.place%></strong>
+      <span class="txt_kitchen"><%=@party.address%></span>
+    </div>
+    <a class="btn_round btn_submit" onclick="viewLayer()">신청하기</a></li>
+    <% if current_manager %>
+      <a style="margin-top: 5px;" href="/parties/<%=@party.id%>/participants" class="btn_round">모임 신청자 현황</a></li>
+    <% end %>
+  </div>
 
-    <ul class="wrap_button">
-      <li><a class="btn_round btn_submit" onclick="request_submit();">신청</a></li>
-      <li><a class="btn_round btn_cancle" onclick="request_reset();">취소</a></li>
-    </ul>
-  </fieldset>
-</form>
+
+  <form name="request_participant" id="request_participant" method="POST" enctype="multipart/form-data">
+    <fieldset>
+      <div class="layer_ggida" style="display:none">
+        <div class="overlay"></div>
+        <div class="inner_layer">
+          <div class="box_written">
+            <strong class="tit_layer"><em class="emph_g"><%= @party.place%> </em><%= @party.title%></strong>
+            <ul class="list_writte">
+              <li>
+                <div class="item_inp "><label for="" class="lab_weite" >이름</label> <span class="cell_inp"><input name="participant[name]" id="name" type="text" class="inp_weite" placeholder="이름을 입력하세요"/></span></div>
+                <div class="item_inp "><label for="" class="lab_weite" >핸드폰번호</label> <span class="cell_inp"><input name="participant[number]" id="number" type="text" class="inp_weite" placeholder="000-0000-0000"/></span></div>
+                <div class="item_inp "><label for="" class="lab_weite" >이메일</label> <span class="cell_inp"><input name="participant[email]" id="email" type="text" class="inp_weite" placeholder="이메일을 입력하세요"/></span></div>
+              </li>
+            </ul>
+            <div class="wrap_check check"> <!-- focus 시 .check 추가 -->
+              <input id="checkAgree" name="checkAgree" type="checkbox" class="input_check">
+              <label for="checkAgree" class="lab_check">개인정보제공에 동의합니다.<span class="ico_ggida ico_check"></span></label>
+            </div>
+          </div>
+          <div class="wrap_button2">
+            <a class="btn_layer btn_submit" onclick="request_submit()">신청</a>
+            <a class="btn_layer btn_cancel" onclick="closeLayer()">취소</a>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+</div>
+  </div>
+
+
+
+  <script type="text/javascript">
+function viewLayer(){
+    $(".layer_ggida").css("display","");
+}
+function closeLayer(){
+    $(".layer_ggida").css("display","none");
+    document.getElementById("request_participant").reset();
+    }
+  </script>

@@ -2,6 +2,9 @@ class ManagersController < ApplicationController
 
   before_action :authenticate_user!
 
+  def index
+  	redirect_to '/managers/sign_in'
+  end
   def parties
     @parties = Party.pending_approval.order(id: :desc)
   end

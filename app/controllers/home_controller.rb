@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def introduce
+    @kitchens = Kitchen.all
   end
 
   def guide

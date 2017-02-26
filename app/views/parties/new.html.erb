@@ -1,6 +1,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="/assets/jquery.timepicker.css" />
+<link rel="stylesheet" type="text/css" href="/assets/jquery.timepicker.css">
 <script type="text/javascript" src="/assets/jquery.timepicker.js"></script>
 <script language="JavaScript" type="text/JavaScript">
 //<![CDATA[
@@ -119,7 +119,7 @@ function request_submit() {
                 <label for="" class="lab_weite" >모임장소</label>
                 <div class="cell_inp">
                   <span id="place_temp" class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
-                  <select id="place" name="party[kitchenId]" class="inp_weite">
+                  <select id="place" name="party[kitchen_id]" class="inp_weite">
                     <option value=""></option>
 				  <% @kitchens.each_with_index do |kitchen, idx| %>
                     <option value="<%=kitchen.id%>"><%=kitchen.name%></option>
@@ -140,7 +140,7 @@ function request_submit() {
             <div class="item_inp ">
               <label for="" class="lab_weite" >모임유형</label>
               <div class="cell_inp">
-                <span id="type_temp" class="txt_label">모임 장소를 선택하세요.</span> <!-- select 포커스시 display:none -->
+                <span id="type_temp" class="txt_label">모임 유형을 선택하세요.</span> <!-- select 포커스시 display:none -->
                 <select id="party_type" name="party[category]" class="inp_weite">
                   <option value=""></option>
                   <option value="함께 장보고 요리하기">함께 장보고 요리하기</option>
