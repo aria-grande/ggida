@@ -161,11 +161,13 @@ button.btn_round{height:50px;padding-top:4px}
     background:-webkit-linear-gradient(top, rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
     background:linear-gradient(to bottom, rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#000',GradientType=0 )}
+
+.box_invite .tit_sub{display:none}
 .item_invite{padding:30px 32px 32px;background-color:#fff;color:#444}
 .item_invite .tit_invite{display:block;font-size:28px;line-height:33px}
 .item_invite .emph_g{display:block;margin-top:5px;font-size:15px;line-height:19px}
 .item_invite .txt_weite{margin-top:30px;font-size:18px;line-height:21px;}
-.list_invite{padding-top:6px;margin-bottom:70px;font-size:22px;line-height:27px}
+.list_invite{overflow:hidden;padding-top:6px;margin-bottom:70px;font-size:22px;line-height:27px}
 .list_invite li{margin-top:24px}
 .list_invite .em_txt{display:block;margin-bottom:4px;font-size:15px;line-height:19px;color:#7c7c7c}
 .info_kitchen{overflow:hidden;margin-bottom:70px}
@@ -241,6 +243,11 @@ only screen and (min-width:768px) {
 	.box_sign .txt_error{top:266px}
     .item_upload{font-size:13px;line-height:18px}
     .item_upload .ico_upload{width:84px}
+    .box_invite .tit_sub{display:block}
+    .box_invite .box_visual{height:auto}
+    .list_invite li{float:left;width:50%}
+    .info_kitchen .tit_kitchen{padding-top:10px}
+    
     
     .navi_on {bottom:auto;height:100%}
     .side_menu {display:none;overflow-x:hidden;overflow-y:scroll;position:absolute;left:-1000px;top:0;bottom:0;width:100vw}
@@ -253,7 +260,7 @@ only screen and (min-width:768px) {
     .cont_sub .ggida_head .tit_logo{display:block;height:60px;background-color:#df3924}
     .cont_sub #ggidaGnb{display:block;background-color:#df3924}
     .cont_sub .gnb_ggida{background-color:#df3924}
-    .cont_sub .box_g{width:521px;margin:0 auto}
+    .cont_sub .box_g{width:512px;margin:0 auto}
     
     .layer_ggida .inner_layer{left:50%;top:240px;bottom:auto;width:375px;margin:0 0 0 -188px}
     .layer_ggida .box_written{overflow:hidden}
