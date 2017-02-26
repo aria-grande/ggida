@@ -46,9 +46,8 @@
 
   <div id="mArticle">
 <div class="box_g box_invite">
-  <h2 class="screen_out">모임 상세</h2>
+  <h2 class="tit_sub">모임 상세</h2>
   <div class="box_visual">
-    <div class="thumb_g thumb_main">
       <img src="/images/m640/bg_main.png" class="bg_img" alt="">
       <%
       thumbnail = "/images/m640/thumb_temp.png";
@@ -56,8 +55,9 @@
       	thumbnail = "http://file.ggida.org/img/#{@party.id}_medium_#{@party.images_file_name}"
       end
       %>
-      <img src="<%=thumbnail%>" class="thumb_img" alt="">
-    </div>
+      <div class="thumb_g thumb_main">
+        <img src="<%=thumbnail%>" class="thumb_img" alt="">
+      </div>
   </div>
   <div class="item_invite">
     <strong class="tit_invite"><%=@party.title%></strong>

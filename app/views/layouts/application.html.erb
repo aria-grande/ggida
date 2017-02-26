@@ -24,15 +24,15 @@
     <div id="ggidaHead" class="ggida_head " role="banner"> <!-- box_visual 영역 사라지면 fixed_head 클래스 추가-->
       <div class="inner_head">
         <% if current_page?(new_manager_session_path) %>
-            <h1 class="tit_head"><a href="#none" class="link_logo"><span class="ico_ggida tit_logo">ggida</span></a></h1>
+            <h1 class="tit_head"><a href="/" class="link_logo"><span class="ico_ggida tit_logo">ggida</span></a></h1>
             <h2 class="screen_out">Manager Login</h2>
         <% else %>
-            <h1 class="screen_out">끼니를 다함께</h1>
+            <h1 class="tit_logo"><img src="/images/m640/img_logo_pc.png" class="img_logo" alt="끼다"></h1>
             <a href="javascript:;" class="btn_ggida btn_navi"><span class="ico_ggida ico_navi">메뉴열기</span></a>
             <div id="ggidaGnb" role="navigation">
               <h2 class="screen_out">끼다 메인메뉴</h2>
               <ul class="gnb_ggida">
-                <li><a href="#none" class="link_gnb">HOME</a></li>
+                <li><a href="/" class="link_gnb">HOME</a></li>
                 <% if current_manager %>
                     <li><a href="/managers/parties" class="link_gnb">신청모임확인</a></li>
                 <% else %>
