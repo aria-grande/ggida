@@ -2,6 +2,10 @@
 <%@thumbnail = "http://file.ggida.org/img/#{@party.id}_medium_#{@party.images_file_name}"%>
 <%@description = "#{@party.contents[0..30]} ..."%>
 
+<style>
+	.thumb_main{position:relative}
+	.bg_img{position:absolute}
+</style>
 <script language="JavaScript" type="text/JavaScript">
     $(document).ready(function(){
         var form = document.forms['request_participant'];
@@ -30,8 +34,8 @@
 <div class="box_g box_invite">
   <h2 class="screen_out">모임 상세</h2>
   <div class="box_visual">
-    <img src="/images/m640/bg_main.png" class="bg_img" alt="">
     <div class="thumb_g thumb_main">
+      <img src="/images/m640/bg_main.png" class="bg_img" alt="">
       <img src="http://file.ggida.org/img/<%=@party.id%>_medium_<%=@party.images_file_name%>" class="thumb_img" alt="">
     </div>
   </div>
