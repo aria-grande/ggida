@@ -261,7 +261,7 @@ only screen and (min-width:768px) {
     .cont_sub .ggida_head .tit_logo{display:block;height:60px;background-color:#df3924}
     .cont_sub #ggidaGnb{display:block;background-color:#df3924}
     .cont_sub .gnb_ggida{background-color:#df3924}
-    .cont_sub .box_g{width:512px;margin:0 auto}
+    .cont_sub .box_g, .cont_sub .box_visual{width:512px;margin:0 auto}
     
     .layer_ggida .inner_layer{left:50%;top:240px;bottom:auto;width:375px;margin:0 0 0 -188px}
     .layer_ggida .box_written{overflow:hidden}
