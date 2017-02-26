@@ -18,7 +18,8 @@ class ParticipantsController < ApplicationController
   end
 
   def create
-    Participant.create!(participant_params)
+    raise Exceptions::DefaultError, {msg: 'participant 생성에 실패', status_code: :server_error} unless Participant.create!(participant_params)
+    head :ok
   end
 
   private
@@ -26,5 +27,4 @@ class ParticipantsController < ApplicationController
   def participant_params
     params.require(:participant).permit(:name, :email, :phone, :state, :party_id)
   end
-
 end
