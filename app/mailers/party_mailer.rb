@@ -3,7 +3,7 @@ class PartyMailer < ApplicationMailer
 
   def request_party(party)
   	@party = party
-    mail(to: "thediputs@gmail.com", subject: "[개설신청]" + party.title)
+    mail(to: "ggida.lab@gmail.com", subject: "[개설신청]" + party.title)
   end
   
   def deny_party(party)
